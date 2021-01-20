@@ -58,17 +58,17 @@ namespace Asa24LoadTest
             this.PreRequest += new EventHandler<PreRequestEventArgs>(this.testPlugin0.PreRequest);
             this.PostRequest += new EventHandler<PostRequestEventArgs>(this.testPlugin0.PostRequest);
 
-            WebTestRequest request1 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/demo");
+            WebTestRequest request1 = new WebTestRequest("https://asa24-stage.nci.nih.gov/demo");
             request1.ThinkTime = 7;
-            request1.ExpectedResponseUrl = "http://ec2-3-89-189-88.compute-1.amazonaws.com/demo/";
+            request1.ExpectedResponseUrl = "https://asa24-stage.nci.nih.gov/demo/";
             yield return request1;
             request1 = null;
 
-            WebTestRequest request2 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/ssoservices/auth/anonymous");
+            WebTestRequest request2 = new WebTestRequest("https://asa24-stage.nci.nih.gov/ssoservices/auth/anonymous");
             request2.Method = "POST";
             request2.Headers.Add(new WebTestRequestHeader("X-Requested-With", "XMLHttpRequest"));
             request2.Headers.Add(new WebTestRequestHeader("Accept", "*/*"));
-            request2.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/demo/"));
+            request2.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/demo/"));
             request2.QueryStringParameters.Add("format", "json", false, false);
             FormPostHttpBody request2Body = new FormPostHttpBody();
             request2Body.FormPostParameters.Add("Version", "16");
@@ -94,42 +94,42 @@ namespace Asa24LoadTest
 
             WebTestRequest request3 = new WebTestRequest("http://fonts.gstatic.com/s/opensans/v14/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu" +
                     "7kw.woff");
-            request3.Headers.Add(new WebTestRequestHeader("Referer", @"http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/index.html?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJleHAiOiIxNDk3NTkxODk4IiwiaWF0IjoiMTQ5NzU1NTg5OCIsInVzZXIiOiJDQU5ETTE1NzkiLCJ1c2VySWQiOiIwMjdkYTgyNy0xODRmLTRhMjItOWVhMS00NTVjYTI5MTU2NmIiLCJyZWRpcmVjdCI6Imh0dHBzOi8vYXNhMjQubmNpLm5paC5nb3YvIiwicm9sZXMiOiJbXCJSZXNwb25kZW50XCJdIiwic3R1ZHlBY2Nlc3MiOiJbXCJDQU5ETTFcIl0iLCJzdHVkeSI6Ijk4NmU2YmMwLWMxMzQtNDllOS1hNjgzLTQzMzk3ZmJlZThjNyIsInZlcnNpb24iOiIxNiJ9.HM8BUFgZNrVKxEdtlBpLBjvyjSfbV4YTRoBY0cCP8hAMmqQkS3GGy-PzYTnJAGr2rw4QwhkcJ7vUyRS1WPV36g"));
+            request3.Headers.Add(new WebTestRequestHeader("Referer", @"https://asa24-stage.nci.nih.gov/2016/index.html?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJleHAiOiIxNDk3NTkxODk4IiwiaWF0IjoiMTQ5NzU1NTg5OCIsInVzZXIiOiJDQU5ETTE1NzkiLCJ1c2VySWQiOiIwMjdkYTgyNy0xODRmLTRhMjItOWVhMS00NTVjYTI5MTU2NmIiLCJyZWRpcmVjdCI6Imh0dHBzOi8vYXNhMjQubmNpLm5paC5nb3YvIiwicm9sZXMiOiJbXCJSZXNwb25kZW50XCJdIiwic3R1ZHlBY2Nlc3MiOiJbXCJDQU5ETTFcIl0iLCJzdHVkeSI6Ijk4NmU2YmMwLWMxMzQtNDllOS1hNjgzLTQzMzk3ZmJlZThjNyIsInZlcnNpb24iOiIxNiJ9.HM8BUFgZNrVKxEdtlBpLBjvyjSfbV4YTRoBY0cCP8hAMmqQkS3GGy-PzYTnJAGr2rw4QwhkcJ7vUyRS1WPV36g"));
             request3.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             yield return request3;
             request3 = null;
 
             WebTestRequest request4 = new WebTestRequest("http://fonts.gstatic.com/s/opensans/v14/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-" +
                     "uXM.woff");
-            request4.Headers.Add(new WebTestRequestHeader("Referer", @"http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/index.html?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJleHAiOiIxNDk3NTkxODk4IiwiaWF0IjoiMTQ5NzU1NTg5OCIsInVzZXIiOiJDQU5ETTE1NzkiLCJ1c2VySWQiOiIwMjdkYTgyNy0xODRmLTRhMjItOWVhMS00NTVjYTI5MTU2NmIiLCJyZWRpcmVjdCI6Imh0dHBzOi8vYXNhMjQubmNpLm5paC5nb3YvIiwicm9sZXMiOiJbXCJSZXNwb25kZW50XCJdIiwic3R1ZHlBY2Nlc3MiOiJbXCJDQU5ETTFcIl0iLCJzdHVkeSI6Ijk4NmU2YmMwLWMxMzQtNDllOS1hNjgzLTQzMzk3ZmJlZThjNyIsInZlcnNpb24iOiIxNiJ9.HM8BUFgZNrVKxEdtlBpLBjvyjSfbV4YTRoBY0cCP8hAMmqQkS3GGy-PzYTnJAGr2rw4QwhkcJ7vUyRS1WPV36g"));
+            request4.Headers.Add(new WebTestRequestHeader("Referer", @"https://asa24-stage.nci.nih.gov/2016/index.html?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJleHAiOiIxNDk3NTkxODk4IiwiaWF0IjoiMTQ5NzU1NTg5OCIsInVzZXIiOiJDQU5ETTE1NzkiLCJ1c2VySWQiOiIwMjdkYTgyNy0xODRmLTRhMjItOWVhMS00NTVjYTI5MTU2NmIiLCJyZWRpcmVjdCI6Imh0dHBzOi8vYXNhMjQubmNpLm5paC5nb3YvIiwicm9sZXMiOiJbXCJSZXNwb25kZW50XCJdIiwic3R1ZHlBY2Nlc3MiOiJbXCJDQU5ETTFcIl0iLCJzdHVkeSI6Ijk4NmU2YmMwLWMxMzQtNDllOS1hNjgzLTQzMzk3ZmJlZThjNyIsInZlcnNpb24iOiIxNiJ9.HM8BUFgZNrVKxEdtlBpLBjvyjSfbV4YTRoBY0cCP8hAMmqQkS3GGy-PzYTnJAGr2rw4QwhkcJ7vUyRS1WPV36g"));
             request4.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             yield return request4;
             request4 = null;
 
             WebTestRequest request5 = new WebTestRequest("http://fonts.gstatic.com/s/opensans/v14/xjAJXh38I15wypJXxuGMBobN6UDyHWBl620a-IRf" +
                     "uBk.woff");
-            request5.Headers.Add(new WebTestRequestHeader("Referer", @"http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/index.html?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJleHAiOiIxNDk3NTkxODk4IiwiaWF0IjoiMTQ5NzU1NTg5OCIsInVzZXIiOiJDQU5ETTE1NzkiLCJ1c2VySWQiOiIwMjdkYTgyNy0xODRmLTRhMjItOWVhMS00NTVjYTI5MTU2NmIiLCJyZWRpcmVjdCI6Imh0dHBzOi8vYXNhMjQubmNpLm5paC5nb3YvIiwicm9sZXMiOiJbXCJSZXNwb25kZW50XCJdIiwic3R1ZHlBY2Nlc3MiOiJbXCJDQU5ETTFcIl0iLCJzdHVkeSI6Ijk4NmU2YmMwLWMxMzQtNDllOS1hNjgzLTQzMzk3ZmJlZThjNyIsInZlcnNpb24iOiIxNiJ9.HM8BUFgZNrVKxEdtlBpLBjvyjSfbV4YTRoBY0cCP8hAMmqQkS3GGy-PzYTnJAGr2rw4QwhkcJ7vUyRS1WPV36g"));
+            request5.Headers.Add(new WebTestRequestHeader("Referer", @"https://asa24-stage.nci.nih.gov/2016/index.html?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJleHAiOiIxNDk3NTkxODk4IiwiaWF0IjoiMTQ5NzU1NTg5OCIsInVzZXIiOiJDQU5ETTE1NzkiLCJ1c2VySWQiOiIwMjdkYTgyNy0xODRmLTRhMjItOWVhMS00NTVjYTI5MTU2NmIiLCJyZWRpcmVjdCI6Imh0dHBzOi8vYXNhMjQubmNpLm5paC5nb3YvIiwicm9sZXMiOiJbXCJSZXNwb25kZW50XCJdIiwic3R1ZHlBY2Nlc3MiOiJbXCJDQU5ETTFcIl0iLCJzdHVkeSI6Ijk4NmU2YmMwLWMxMzQtNDllOS1hNjgzLTQzMzk3ZmJlZThjNyIsInZlcnNpb24iOiIxNiJ9.HM8BUFgZNrVKxEdtlBpLBjvyjSfbV4YTRoBY0cCP8hAMmqQkS3GGy-PzYTnJAGr2rw4QwhkcJ7vUyRS1WPV36g"));
             request5.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             yield return request5;
             request5 = null;
 
             WebTestRequest request6 = new WebTestRequest("http://fonts.gstatic.com/s/opensans/v14/PRmiXeptR36kaC0GEAetxn5HxGBcBvicCpTp6spH" +
                     "fNo.woff");
-            request6.Headers.Add(new WebTestRequestHeader("Referer", @"http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/index.html?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJleHAiOiIxNDk3NTkxODk4IiwiaWF0IjoiMTQ5NzU1NTg5OCIsInVzZXIiOiJDQU5ETTE1NzkiLCJ1c2VySWQiOiIwMjdkYTgyNy0xODRmLTRhMjItOWVhMS00NTVjYTI5MTU2NmIiLCJyZWRpcmVjdCI6Imh0dHBzOi8vYXNhMjQubmNpLm5paC5nb3YvIiwicm9sZXMiOiJbXCJSZXNwb25kZW50XCJdIiwic3R1ZHlBY2Nlc3MiOiJbXCJDQU5ETTFcIl0iLCJzdHVkeSI6Ijk4NmU2YmMwLWMxMzQtNDllOS1hNjgzLTQzMzk3ZmJlZThjNyIsInZlcnNpb24iOiIxNiJ9.HM8BUFgZNrVKxEdtlBpLBjvyjSfbV4YTRoBY0cCP8hAMmqQkS3GGy-PzYTnJAGr2rw4QwhkcJ7vUyRS1WPV36g"));
+            request6.Headers.Add(new WebTestRequestHeader("Referer", @"https://asa24-stage.nci.nih.gov/2016/index.html?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJleHAiOiIxNDk3NTkxODk4IiwiaWF0IjoiMTQ5NzU1NTg5OCIsInVzZXIiOiJDQU5ETTE1NzkiLCJ1c2VySWQiOiIwMjdkYTgyNy0xODRmLTRhMjItOWVhMS00NTVjYTI5MTU2NmIiLCJyZWRpcmVjdCI6Imh0dHBzOi8vYXNhMjQubmNpLm5paC5nb3YvIiwicm9sZXMiOiJbXCJSZXNwb25kZW50XCJdIiwic3R1ZHlBY2Nlc3MiOiJbXCJDQU5ETTFcIl0iLCJzdHVkeSI6Ijk4NmU2YmMwLWMxMzQtNDllOS1hNjgzLTQzMzk3ZmJlZThjNyIsInZlcnNpb24iOiIxNiJ9.HM8BUFgZNrVKxEdtlBpLBjvyjSfbV4YTRoBY0cCP8hAMmqQkS3GGy-PzYTnJAGr2rw4QwhkcJ7vUyRS1WPV36g"));
             request6.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             yield return request6;
             request6 = null;
 
             WebTestRequest request7 = new WebTestRequest("http://fonts.gstatic.com/s/rokkitt/v11/4Z-2qkHrI1biwaOxvW6ZTA.woff");
-            request7.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/jwt"));
+            request7.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/jwt"));
             request7.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             yield return request7;
             request7 = null;
 
-            WebTestRequest request8 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/auth/jwt");
+            WebTestRequest request8 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/auth/jwt");
             request8.Method = "POST";
             request8.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request8.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/jwt"));
+            request8.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/jwt"));
             request8.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request8.QueryStringParameters.Add("format", "json", false, false);
             request8.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:44:59-0400", false, false);
@@ -141,14 +141,14 @@ namespace Asa24LoadTest
             yield return request8;
             request8 = null;
 
-            WebTestRequest request9 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/assets/favicon.31706bf0d1de32ac.ico");
+            WebTestRequest request9 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/assets/favicon.31706bf0d1de32ac.ico");
             request9.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             yield return request9;
             request9 = null;
 
             WebTestRequest request10 = new WebTestRequest("http://bam.nr-data.net/1/1029e6f06b");
             request10.Encoding = System.Text.Encoding.GetEncoding("iso-8859-1");
-            request10.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/jwt"));
+            request10.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/jwt"));
             request10.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request10.QueryStringParameters.Add("a", "5482438", false, false);
             request10.QueryStringParameters.Add("sa", "1", false, false);
@@ -167,9 +167,9 @@ namespace Asa24LoadTest
 
 
 
-            WebTestRequest request11 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/users/" + UserId + "/preferences/remoteauth");
+            WebTestRequest request11 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/users/" + UserId + "/preferences/remoteauth");
             request11.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request11.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/jwt"));
+            request11.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/jwt"));
             request11.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request11.QueryStringParameters.Add("studyid", "9c6bf45d-cbb7-4e6c-8d46-6ac987d53b0a", false, false);
             request11.QueryStringParameters.Add("language", "undefined", false, false);
@@ -194,20 +194,20 @@ namespace Asa24LoadTest
 
 
 
-            WebTestRequest request12 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request12 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request12.ThinkTime = 22;
             request12.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request12.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/jwt"));
+            request12.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/jwt"));
             request12.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request12.QueryStringParameters.Add("format", "json", false, false);
             request12.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:44:59-0400", false, false);
             yield return request12;
             request12 = null;
 
-            WebTestRequest request13 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/users/" + UserId + "/language");
+            WebTestRequest request13 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/users/" + UserId + "/language");
             request13.Method = "POST";
             request13.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request13.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/language"));
+            request13.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/language"));
             request13.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request13.QueryStringParameters.Add("format", "json", false, false);
             request13.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:45:21-0400", false, false);
@@ -219,18 +219,18 @@ namespace Asa24LoadTest
             yield return request13;
             request13 = null;
 
-            WebTestRequest request14 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/assets/fonts/glyphicons-halflings-regular.eot");
+            WebTestRequest request14 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/assets/fonts/glyphicons-halflings-regular.eot");
             request14.ThinkTime = 30;
-            request14.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/welcome"));
+            request14.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/welcome"));
             request14.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request14.QueryStringParameters.Add("", "", false, false);
             yield return request14;
             request14 = null;
 
-            WebTestRequest request15 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/users/" + UserId + "/showtutorial/false");
+            WebTestRequest request15 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/users/" + UserId + "/showtutorial/false");
             request15.Method = "POST";
             request15.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request15.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/tutorials/5"));
+            request15.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/tutorials/5"));
             request15.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request15.QueryStringParameters.Add("format", "json", false, false);
             request15.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:45:52-0400", false, false);
@@ -242,9 +242,9 @@ namespace Asa24LoadTest
             yield return request15;
             request15 = null;
 
-            WebTestRequest request16 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/users/" + UserId + "/favorites");
+            WebTestRequest request16 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/users/" + UserId + "/favorites");
             request16.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request16.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/tutorials/5"));
+            request16.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/tutorials/5"));
             request16.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request16.QueryStringParameters.Add("fltType", "undefined", false, false);
             request16.QueryStringParameters.Add("format", "json", false, false);
@@ -252,20 +252,20 @@ namespace Asa24LoadTest
             yield return request16;
             request16 = null;
 
-            WebTestRequest request17 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request17 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request17.ThinkTime = 13;
             request17.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request17.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/tutorials/5"));
+            request17.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/tutorials/5"));
             request17.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request17.QueryStringParameters.Add("format", "json", false, false);
             request17.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:45:52-0400", false, false);
             yield return request17;
             request17 = null;
 
-            WebTestRequest request18 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/users/" + UserId + "/language");
+            WebTestRequest request18 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/users/" + UserId + "/language");
             request18.ThinkTime = 36;
             request18.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request18.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/my-food-and-drinks"));
+            request18.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/my-food-and-drinks"));
             request18.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request18.QueryStringParameters.Add("format", "json", false, false);
             request18.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:46:05-0400", false, false);
@@ -275,10 +275,10 @@ namespace Asa24LoadTest
 
             string meal1 = "";
 
-            WebTestRequest request19 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals");
+            WebTestRequest request19 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals");
             request19.Method = "POST";
             request19.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request19.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/meal/new"));
+            request19.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/meal/new"));
             request19.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request19.QueryStringParameters.Add("format", "json", false, false);
             request19.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:46:41-0400", false, false);
@@ -306,29 +306,29 @@ namespace Asa24LoadTest
 
             meal1 = this.Context["meal1"].ToString();
 
-            WebTestRequest request20 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request20 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request20.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request20.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/meal/new"));
+            request20.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/meal/new"));
             request20.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request20.QueryStringParameters.Add("format", "json", false, false);
             request20.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:46:41-0400", false, false);
             yield return request20;
             request20 = null;
 
-            WebTestRequest request21 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request21 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal1);
             request21.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request21.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/meal/new"));
+            request21.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/meal/new"));
             request21.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request21.QueryStringParameters.Add("format", "json", false, false);
             request21.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:46:41-0400", false, false);
             yield return request21;
             request21 = null;
 
-            WebTestRequest request22 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/users/" + UserId + "/favorites");
+            WebTestRequest request22 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/users/" + UserId + "/favorites");
             request22.ThinkTime = 36;
             request22.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request22.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/meal/new"));
+            request22.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/meal/new"));
             request22.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request22.QueryStringParameters.Add("fltType", "both", false, false);
             request22.QueryStringParameters.Add("format", "json", false, false);
@@ -336,11 +336,11 @@ namespace Asa24LoadTest
             yield return request22;
             request22 = null;
 
-            WebTestRequest request23 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/search");
+            WebTestRequest request23 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/search");
             request23.ThinkTime = 35;
             request23.Method = "POST";
             request23.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request23.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal1));
+            request23.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal1));
             request23.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request23.QueryStringParameters.Add("format", "json", false, false);
             request23.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:47:18-0400", false, false);
@@ -352,11 +352,11 @@ namespace Asa24LoadTest
             yield return request23;
             request23 = null;
 
-            WebTestRequest request24 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/searchresults");
+            WebTestRequest request24 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/searchresults");
             request24.ThinkTime = 6;
             request24.Method = "POST";
             request24.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request24.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal1));
+            request24.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal1));
             request24.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request24.QueryStringParameters.Add("format", "json", false, false);
             request24.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:47:53-0400", false, false);
@@ -369,11 +369,11 @@ namespace Asa24LoadTest
             yield return request24;
             request24 = null;
 
-            WebTestRequest request25 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/search");
+            WebTestRequest request25 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/search");
             request25.ThinkTime = 3;
             request25.Method = "POST";
             request25.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request25.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal1));
+            request25.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal1));
             request25.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request25.QueryStringParameters.Add("format", "json", false, false);
             request25.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:47:59-0400", false, false);
@@ -385,11 +385,11 @@ namespace Asa24LoadTest
             yield return request25;
             request25 = null;
 
-            WebTestRequest request26 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/searchresults");
+            WebTestRequest request26 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/searchresults");
             request26.ThinkTime = 15;
             request26.Method = "POST";
             request26.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request26.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal1));
+            request26.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal1));
             request26.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request26.QueryStringParameters.Add("format", "json", false, false);
             request26.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:48:03-0400", false, false);
@@ -402,11 +402,11 @@ namespace Asa24LoadTest
             yield return request26;
             request26 = null;
 
-            WebTestRequest request27 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/search");
+            WebTestRequest request27 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/search");
             request27.ThinkTime = 12;
             request27.Method = "POST";
             request27.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request27.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal1));
+            request27.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal1));
             request27.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request27.QueryStringParameters.Add("format", "json", false, false);
             request27.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:48:17-0400", false, false);
@@ -418,11 +418,11 @@ namespace Asa24LoadTest
             yield return request27;
             request27 = null;
 
-            WebTestRequest request28 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/searchresults");
+            WebTestRequest request28 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/searchresults");
             request28.ThinkTime = 5;
             request28.Method = "POST";
             request28.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request28.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal1));
+            request28.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal1));
             request28.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request28.QueryStringParameters.Add("format", "json", false, false);
             request28.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:48:30-0400", false, false);
@@ -435,11 +435,11 @@ namespace Asa24LoadTest
             yield return request28;
             request28 = null;
 
-            WebTestRequest request29 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/search");
+            WebTestRequest request29 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/search");
             request29.ThinkTime = 23;
             request29.Method = "POST";
             request29.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request29.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal1));
+            request29.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal1));
             request29.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request29.QueryStringParameters.Add("format", "json", false, false);
             request29.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:48:35-0400", false, false);
@@ -451,11 +451,11 @@ namespace Asa24LoadTest
             yield return request29;
             request29 = null;
 
-            WebTestRequest request30 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request30 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/340eb54d-c8ab-4069-ac6c-a8e9848217fe/foods");
             request30.Method = "POST";
             request30.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request30.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal1));
+            request30.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal1));
             request30.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request30.QueryStringParameters.Add("format", "json", false, false);
             request30.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:48:58-0400", false, false);
@@ -469,11 +469,11 @@ namespace Asa24LoadTest
             yield return request30;
             request30 = null;
 
-            WebTestRequest request31 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request31 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/340eb54d-c8ab-4069-ac6c-a8e9848217fe/foods");
             request31.Method = "POST";
             request31.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request31.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal1));
+            request31.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal1));
             request31.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request31.QueryStringParameters.Add("format", "json", false, false);
             request31.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:48:58-0400", false, false);
@@ -487,11 +487,11 @@ namespace Asa24LoadTest
             yield return request31;
             request31 = null;
 
-            WebTestRequest request32 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request32 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/340eb54d-c8ab-4069-ac6c-a8e9848217fe/foods");
             request32.Method = "POST";
             request32.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request32.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal1));
+            request32.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal1));
             request32.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request32.QueryStringParameters.Add("format", "json", false, false);
             request32.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:48:58-0400", false, false);
@@ -505,20 +505,20 @@ namespace Asa24LoadTest
             yield return request32;
             request32 = null;
 
-            WebTestRequest request33 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request33 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request33.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request33.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal1));
+            request33.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal1));
             request33.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request33.QueryStringParameters.Add("format", "json", false, false);
             request33.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:48:58-0400", false, false);
             yield return request33;
             request33 = null;
 
-            WebTestRequest request34 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request34 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal1);
             request34.Method = "POST";
             request34.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request34.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal1));
+            request34.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal1));
             request34.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request34.QueryStringParameters.Add("format", "json", false, false);
             request34.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:48:58-0400", false, false);
@@ -530,9 +530,9 @@ namespace Asa24LoadTest
             yield return request34;
             request34 = null;
 
-            WebTestRequest request35 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/users/" + UserId + "/favorites");
+            WebTestRequest request35 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/users/" + UserId + "/favorites");
             request35.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request35.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal1));
+            request35.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal1));
             request35.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request35.QueryStringParameters.Add("fltType", "undefined", false, false);
             request35.QueryStringParameters.Add("format", "json", false, false);
@@ -540,30 +540,30 @@ namespace Asa24LoadTest
             yield return request35;
             request35 = null;
 
-            WebTestRequest request36 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request36 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request36.ThinkTime = 15;
             request36.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request36.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal1));
+            request36.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal1));
             request36.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request36.QueryStringParameters.Add("format", "json", false, false);
             request36.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:48:59-0400", false, false);
             yield return request36;
             request36 = null;
 
-            WebTestRequest request37 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/users/" + UserId + "/language");
+            WebTestRequest request37 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/users/" + UserId + "/language");
             request37.ThinkTime = 23;
             request37.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request37.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/my-food-and-drinks"));
+            request37.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/my-food-and-drinks"));
             request37.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request37.QueryStringParameters.Add("format", "json", false, false);
             request37.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:49:14-0400", false, false);
             yield return request37;
             request37 = null;
 
-            WebTestRequest request38 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals");
+            WebTestRequest request38 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals");
             request38.Method = "POST";
             request38.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request38.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/meal/new"));
+            request38.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/meal/new"));
             request38.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request38.QueryStringParameters.Add("format", "json", false, false);
             request38.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:49:38-0400", false, false);
@@ -591,29 +591,29 @@ namespace Asa24LoadTest
 
             string meal2 = this.Context["meal2"].ToString();
 
-            WebTestRequest request39 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request39 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request39.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request39.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/meal/new"));
+            request39.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/meal/new"));
             request39.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request39.QueryStringParameters.Add("format", "json", false, false);
             request39.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:49:38-0400", false, false);
             yield return request39;
             request39 = null;
 
-            WebTestRequest request40 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request40 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal2);
             request40.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request40.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/meal/new"));
+            request40.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/meal/new"));
             request40.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request40.QueryStringParameters.Add("format", "json", false, false);
             request40.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:49:38-0400", false, false);
             yield return request40;
             request40 = null;
 
-            WebTestRequest request41 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/users/" + UserId + "/favorites");
+            WebTestRequest request41 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/users/" + UserId + "/favorites");
             request41.ThinkTime = 6;
             request41.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request41.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/meal/new"));
+            request41.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/meal/new"));
             request41.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request41.QueryStringParameters.Add("fltType", "both", false, false);
             request41.QueryStringParameters.Add("format", "json", false, false);
@@ -621,11 +621,11 @@ namespace Asa24LoadTest
             yield return request41;
             request41 = null;
 
-            WebTestRequest request42 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/search");
+            WebTestRequest request42 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/search");
             request42.ThinkTime = 17;
             request42.Method = "POST";
             request42.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request42.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request42.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request42.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request42.QueryStringParameters.Add("format", "json", false, false);
             request42.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:49:43-0400", false, false);
@@ -637,11 +637,11 @@ namespace Asa24LoadTest
             yield return request42;
             request42 = null;
 
-            WebTestRequest request43 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/search");
+            WebTestRequest request43 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/search");
             request43.ThinkTime = 34;
             request43.Method = "POST";
             request43.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request43.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request43.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request43.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request43.QueryStringParameters.Add("format", "json", false, false);
             request43.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:50:01-0400", false, false);
@@ -653,11 +653,11 @@ namespace Asa24LoadTest
             yield return request43;
             request43 = null;
 
-            WebTestRequest request44 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/search");
+            WebTestRequest request44 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/search");
             request44.ThinkTime = 12;
             request44.Method = "POST";
             request44.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request44.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request44.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request44.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request44.QueryStringParameters.Add("format", "json", false, false);
             request44.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:50:35-0400", false, false);
@@ -669,11 +669,11 @@ namespace Asa24LoadTest
             yield return request44;
             request44 = null;
 
-            WebTestRequest request45 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/search");
+            WebTestRequest request45 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/search");
             request45.ThinkTime = 3;
             request45.Method = "POST";
             request45.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request45.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request45.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request45.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request45.QueryStringParameters.Add("format", "json", false, false);
             request45.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:50:47-0400", false, false);
@@ -685,11 +685,11 @@ namespace Asa24LoadTest
             yield return request45;
             request45 = null;
 
-            WebTestRequest request46 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/searchresults");
+            WebTestRequest request46 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/searchresults");
             request46.ThinkTime = 8;
             request46.Method = "POST";
             request46.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request46.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request46.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request46.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request46.QueryStringParameters.Add("format", "json", false, false);
             request46.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:50:50-0400", false, false);
@@ -702,11 +702,11 @@ namespace Asa24LoadTest
             yield return request46;
             request46 = null;
 
-            WebTestRequest request47 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/search");
+            WebTestRequest request47 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/search");
             request47.ThinkTime = 22;
             request47.Method = "POST";
             request47.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request47.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request47.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request47.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request47.QueryStringParameters.Add("format", "json", false, false);
             request47.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:50:58-0400", false, false);
@@ -718,11 +718,11 @@ namespace Asa24LoadTest
             yield return request47;
             request47 = null;
 
-            WebTestRequest request48 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/searchresults");
+            WebTestRequest request48 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/searchresults");
             request48.ThinkTime = 14;
             request48.Method = "POST";
             request48.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request48.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request48.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request48.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request48.QueryStringParameters.Add("format", "json", false, false);
             request48.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:51:20-0400", false, false);
@@ -736,11 +736,11 @@ namespace Asa24LoadTest
             yield return request48;
             request48 = null;
 
-            WebTestRequest request49 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/search");
+            WebTestRequest request49 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/search");
             request49.ThinkTime = 11;
             request49.Method = "POST";
             request49.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request49.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request49.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request49.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request49.QueryStringParameters.Add("format", "json", false, false);
             request49.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:51:33-0400", false, false);
@@ -752,11 +752,11 @@ namespace Asa24LoadTest
             yield return request49;
             request49 = null;
 
-            WebTestRequest request50 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/searchresults");
+            WebTestRequest request50 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/searchresults");
             request50.ThinkTime = 6;
             request50.Method = "POST";
             request50.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request50.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request50.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request50.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request50.QueryStringParameters.Add("format", "json", false, false);
             request50.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:51:44-0400", false, false);
@@ -769,11 +769,11 @@ namespace Asa24LoadTest
             yield return request50;
             request50 = null;
 
-            WebTestRequest request51 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/search");
+            WebTestRequest request51 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/search");
             request51.ThinkTime = 3;
             request51.Method = "POST";
             request51.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request51.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request51.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request51.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request51.QueryStringParameters.Add("format", "json", false, false);
             request51.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:51:50-0400", false, false);
@@ -785,11 +785,11 @@ namespace Asa24LoadTest
             yield return request51;
             request51 = null;
 
-            WebTestRequest request52 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/searchresults");
+            WebTestRequest request52 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/searchresults");
             request52.ThinkTime = 5;
             request52.Method = "POST";
             request52.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request52.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request52.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request52.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request52.QueryStringParameters.Add("format", "json", false, false);
             request52.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:51:53-0400", false, false);
@@ -802,11 +802,11 @@ namespace Asa24LoadTest
             yield return request52;
             request52 = null;
 
-            WebTestRequest request53 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/search");
+            WebTestRequest request53 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/search");
             request53.ThinkTime = 3;
             request53.Method = "POST";
             request53.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request53.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request53.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request53.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request53.QueryStringParameters.Add("format", "json", false, false);
             request53.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:51:58-0400", false, false);
@@ -818,11 +818,11 @@ namespace Asa24LoadTest
             yield return request53;
             request53 = null;
 
-            WebTestRequest request54 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/searchresults");
+            WebTestRequest request54 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/searchresults");
             request54.ThinkTime = 15;
             request54.Method = "POST";
             request54.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request54.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request54.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request54.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request54.QueryStringParameters.Add("format", "json", false, false);
             request54.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:52:01-0400", false, false);
@@ -835,11 +835,11 @@ namespace Asa24LoadTest
             yield return request54;
             request54 = null;
 
-            WebTestRequest request55 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request55 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/61d7c4c6-eda2-4aaf-afff-f78c6c43e7bb/foods/unknown");
             request55.Method = "POST";
             request55.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request55.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request55.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request55.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request55.QueryStringParameters.Add("format", "json", false, false);
             request55.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:52:17-0400", false, false);
@@ -851,11 +851,11 @@ namespace Asa24LoadTest
             yield return request55;
             request55 = null;
 
-            WebTestRequest request56 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request56 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/61d7c4c6-eda2-4aaf-afff-f78c6c43e7bb/foods");
             request56.Method = "POST";
             request56.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request56.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request56.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request56.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request56.QueryStringParameters.Add("format", "json", false, false);
             request56.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:52:17-0400", false, false);
@@ -869,11 +869,11 @@ namespace Asa24LoadTest
             yield return request56;
             request56 = null;
 
-            WebTestRequest request57 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request57 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/61d7c4c6-eda2-4aaf-afff-f78c6c43e7bb/foods");
             request57.Method = "POST";
             request57.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request57.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request57.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request57.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request57.QueryStringParameters.Add("format", "json", false, false);
             request57.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:52:17-0400", false, false);
@@ -886,20 +886,20 @@ namespace Asa24LoadTest
             yield return request57;
             request57 = null;
 
-            WebTestRequest request58 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request58 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request58.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request58.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request58.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request58.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request58.QueryStringParameters.Add("format", "json", false, false);
             request58.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:52:17-0400", false, false);
             yield return request58;
             request58 = null;
 
-            WebTestRequest request59 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request59 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal2);
             request59.Method = "POST";
             request59.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request59.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request59.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request59.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request59.QueryStringParameters.Add("format", "json", false, false);
             request59.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:52:17-0400", false, false);
@@ -911,9 +911,9 @@ namespace Asa24LoadTest
             yield return request59;
             request59 = null;
 
-            WebTestRequest request60 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/users/" + UserId + "/favorites");
+            WebTestRequest request60 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/users/" + UserId + "/favorites");
             request60.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request60.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request60.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request60.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request60.QueryStringParameters.Add("fltType", "undefined", false, false);
             request60.QueryStringParameters.Add("format", "json", false, false);
@@ -921,31 +921,31 @@ namespace Asa24LoadTest
             yield return request60;
             request60 = null;
 
-            WebTestRequest request61 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request61 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request61.ThinkTime = 4;
             request61.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request61.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request61.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request61.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request61.QueryStringParameters.Add("format", "json", false, false);
             request61.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:52:19-0400", false, false);
             yield return request61;
             request61 = null;
 
-            WebTestRequest request62 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/users/" + UserId + "/language");
+            WebTestRequest request62 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/users/" + UserId + "/language");
             request62.ThinkTime = 20;
             request62.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request62.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/my-food-and-drinks"));
+            request62.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/my-food-and-drinks"));
             request62.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request62.QueryStringParameters.Add("format", "json", false, false);
             request62.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:52:23-0400", false, false);
             yield return request62;
             request62 = null;
 
-            WebTestRequest request63 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request63 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "");
             request63.Method = "POST";
             request63.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request63.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/meal/new"));
+            request63.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/meal/new"));
             request63.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request63.QueryStringParameters.Add("format", "json", false, false);
             request63.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:52:43-0400", false, false);
@@ -957,29 +957,29 @@ namespace Asa24LoadTest
             yield return request63;
             request63 = null;
 
-            WebTestRequest request64 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request64 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request64.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request64.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/meal/new"));
+            request64.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/meal/new"));
             request64.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request64.QueryStringParameters.Add("format", "json", false, false);
             request64.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:52:43-0400", false, false);
             yield return request64;
             request64 = null;
 
-            WebTestRequest request65 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request65 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal2);
             request65.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request65.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/meal/new"));
+            request65.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/meal/new"));
             request65.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request65.QueryStringParameters.Add("format", "json", false, false);
             request65.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:52:43-0400", false, false);
             yield return request65;
             request65 = null;
 
-            WebTestRequest request66 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/users/" + UserId + "/favorites");
+            WebTestRequest request66 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/users/" + UserId + "/favorites");
             request66.ThinkTime = 2;
             request66.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request66.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/meal/new"));
+            request66.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/meal/new"));
             request66.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request66.QueryStringParameters.Add("fltType", "both", false, false);
             request66.QueryStringParameters.Add("format", "json", false, false);
@@ -987,11 +987,11 @@ namespace Asa24LoadTest
             yield return request66;
             request66 = null;
 
-            WebTestRequest request67 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/search");
+            WebTestRequest request67 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/search");
             request67.ThinkTime = 5;
             request67.Method = "POST";
             request67.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request67.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request67.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request67.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request67.QueryStringParameters.Add("format", "json", false, false);
             request67.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:52:45-0400", false, false);
@@ -1003,11 +1003,11 @@ namespace Asa24LoadTest
             yield return request67;
             request67 = null;
 
-            WebTestRequest request68 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/searchresults");
+            WebTestRequest request68 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/searchresults");
             request68.ThinkTime = 2;
             request68.Method = "POST";
             request68.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request68.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request68.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request68.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request68.QueryStringParameters.Add("format", "json", false, false);
             request68.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:52:50-0400", false, false);
@@ -1020,11 +1020,11 @@ namespace Asa24LoadTest
             yield return request68;
             request68 = null;
 
-            WebTestRequest request69 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request69 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/3d640d7c-140e-479a-a236-0d57d8dffce5/foods");
             request69.Method = "POST";
             request69.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request69.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request69.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request69.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request69.QueryStringParameters.Add("format", "json", false, false);
             request69.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:52:52-0400", false, false);
@@ -1038,20 +1038,20 @@ namespace Asa24LoadTest
             yield return request69;
             request69 = null;
 
-            WebTestRequest request70 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request70 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request70.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request70.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request70.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request70.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request70.QueryStringParameters.Add("format", "json", false, false);
             request70.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:52:53-0400", false, false);
             yield return request70;
             request70 = null;
 
-            WebTestRequest request71 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request71 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal2);
             request71.Method = "POST";
             request71.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request71.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request71.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request71.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request71.QueryStringParameters.Add("format", "json", false, false);
             request71.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:52:54-0400", false, false);
@@ -1063,9 +1063,9 @@ namespace Asa24LoadTest
             yield return request71;
             request71 = null;
 
-            WebTestRequest request72 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/users/" + UserId + "/favorites");
+            WebTestRequest request72 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/users/" + UserId + "/favorites");
             request72.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request72.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request72.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request72.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request72.QueryStringParameters.Add("fltType", "undefined", false, false);
             request72.QueryStringParameters.Add("format", "json", false, false);
@@ -1073,31 +1073,31 @@ namespace Asa24LoadTest
             yield return request72;
             request72 = null;
 
-            WebTestRequest request73 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request73 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request73.ThinkTime = 24;
             request73.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request73.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request73.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request73.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request73.QueryStringParameters.Add("format", "json", false, false);
             request73.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:52:54-0400", false, false);
             yield return request73;
             request73 = null;
 
-            WebTestRequest request74 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/users/" + UserId + "/language");
+            WebTestRequest request74 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/users/" + UserId + "/language");
             request74.ThinkTime = 15;
             request74.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request74.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/my-food-and-drinks"));
+            request74.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/my-food-and-drinks"));
             request74.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request74.QueryStringParameters.Add("format", "json", false, false);
             request74.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:53:19-0400", false, false);
             yield return request74;
             request74 = null;
 
-            WebTestRequest request75 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request75 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "");
             request75.Method = "POST";
             request75.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request75.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/meal/new"));
+            request75.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/meal/new"));
             request75.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request75.QueryStringParameters.Add("format", "json", false, false);
             request75.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:53:34-0400", false, false);
@@ -1109,29 +1109,29 @@ namespace Asa24LoadTest
             yield return request75;
             request75 = null;
 
-            WebTestRequest request76 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request76 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request76.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request76.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/meal/new"));
+            request76.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/meal/new"));
             request76.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request76.QueryStringParameters.Add("format", "json", false, false);
             request76.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:53:34-0400", false, false);
             yield return request76;
             request76 = null;
 
-            WebTestRequest request77 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request77 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal2);
             request77.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request77.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/meal/new"));
+            request77.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/meal/new"));
             request77.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request77.QueryStringParameters.Add("format", "json", false, false);
             request77.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:53:34-0400", false, false);
             yield return request77;
             request77 = null;
 
-            WebTestRequest request78 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/users/" + UserId + "/favorites");
+            WebTestRequest request78 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/users/" + UserId + "/favorites");
             request78.ThinkTime = 3;
             request78.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request78.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/meal/new"));
+            request78.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/meal/new"));
             request78.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request78.QueryStringParameters.Add("fltType", "both", false, false);
             request78.QueryStringParameters.Add("format", "json", false, false);
@@ -1139,11 +1139,11 @@ namespace Asa24LoadTest
             yield return request78;
             request78 = null;
 
-            WebTestRequest request79 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/search");
+            WebTestRequest request79 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/search");
             request79.ThinkTime = 2;
             request79.Method = "POST";
             request79.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request79.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request79.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request79.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request79.QueryStringParameters.Add("format", "json", false, false);
             request79.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:53:37-0400", false, false);
@@ -1155,11 +1155,11 @@ namespace Asa24LoadTest
             yield return request79;
             request79 = null;
 
-            WebTestRequest request80 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/searchresults");
+            WebTestRequest request80 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/searchresults");
             request80.ThinkTime = 2;
             request80.Method = "POST";
             request80.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request80.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request80.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request80.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request80.QueryStringParameters.Add("format", "json", false, false);
             request80.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:53:39-0400", false, false);
@@ -1172,11 +1172,11 @@ namespace Asa24LoadTest
             yield return request80;
             request80 = null;
 
-            WebTestRequest request81 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request81 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal2+"/foods");
             request81.Method = "POST";
             request81.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request81.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request81.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request81.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request81.QueryStringParameters.Add("format", "json", false, false);
             request81.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:53:41-0400", false, false);
@@ -1190,20 +1190,20 @@ namespace Asa24LoadTest
             yield return request81;
             request81 = null;
 
-            WebTestRequest request82 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request82 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request82.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request82.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request82.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request82.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request82.QueryStringParameters.Add("format", "json", false, false);
             request82.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:53:41-0400", false, false);
             yield return request82;
             request82 = null;
 
-            WebTestRequest request83 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request83 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal2);
             request83.Method = "POST";
             request83.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request83.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request83.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request83.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request83.QueryStringParameters.Add("format", "json", false, false);
             request83.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:53:42-0400", false, false);
@@ -1215,9 +1215,9 @@ namespace Asa24LoadTest
             yield return request83;
             request83 = null;
 
-            WebTestRequest request84 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/users/" + UserId + "/favorites");
+            WebTestRequest request84 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/users/" + UserId + "/favorites");
             request84.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request84.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request84.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request84.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request84.QueryStringParameters.Add("fltType", "undefined", false, false);
             request84.QueryStringParameters.Add("format", "json", false, false);
@@ -1225,31 +1225,31 @@ namespace Asa24LoadTest
             yield return request84;
             request84 = null;
 
-            WebTestRequest request85 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request85 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request85.ThinkTime = 4;
             request85.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request85.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request85.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request85.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request85.QueryStringParameters.Add("format", "json", false, false);
             request85.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:53:42-0400", false, false);
             yield return request85;
             request85 = null;
 
-            WebTestRequest request86 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/users/" + UserId + "/language");
+            WebTestRequest request86 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/users/" + UserId + "/language");
             request86.ThinkTime = 26;
             request86.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request86.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/my-food-and-drinks"));
+            request86.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/my-food-and-drinks"));
             request86.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request86.QueryStringParameters.Add("format", "json", false, false);
             request86.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:53:47-0400", false, false);
             yield return request86;
             request86 = null;
 
-            WebTestRequest request87 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request87 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "");
             request87.Method = "POST";
             request87.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request87.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/meal/new"));
+            request87.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/meal/new"));
             request87.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request87.QueryStringParameters.Add("format", "json", false, false);
             request87.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:54:14-0400", false, false);
@@ -1261,29 +1261,29 @@ namespace Asa24LoadTest
             yield return request87;
             request87 = null;
 
-            WebTestRequest request88 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request88 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request88.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request88.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/meal/new"));
+            request88.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/meal/new"));
             request88.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request88.QueryStringParameters.Add("format", "json", false, false);
             request88.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:54:14-0400", false, false);
             yield return request88;
             request88 = null;
 
-            WebTestRequest request89 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request89 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal2);
             request89.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request89.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/meal/new"));
+            request89.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/meal/new"));
             request89.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request89.QueryStringParameters.Add("format", "json", false, false);
             request89.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:54:14-0400", false, false);
             yield return request89;
             request89 = null;
 
-            WebTestRequest request90 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/users/" + UserId + "/favorites");
+            WebTestRequest request90 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/users/" + UserId + "/favorites");
             request90.ThinkTime = 4;
             request90.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request90.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/meal/new"));
+            request90.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/meal/new"));
             request90.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request90.QueryStringParameters.Add("fltType", "both", false, false);
             request90.QueryStringParameters.Add("format", "json", false, false);
@@ -1291,11 +1291,11 @@ namespace Asa24LoadTest
             yield return request90;
             request90 = null;
 
-            WebTestRequest request91 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/search");
+            WebTestRequest request91 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/search");
             request91.ThinkTime = 4;
             request91.Method = "POST";
             request91.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request91.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request91.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request91.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request91.QueryStringParameters.Add("format", "json", false, false);
             request91.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:54:18-0400", false, false);
@@ -1307,11 +1307,11 @@ namespace Asa24LoadTest
             yield return request91;
             request91 = null;
 
-            WebTestRequest request92 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/searchresults");
+            WebTestRequest request92 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/searchresults");
             request92.ThinkTime = 2;
             request92.Method = "POST";
             request92.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request92.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request92.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request92.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request92.QueryStringParameters.Add("format", "json", false, false);
             request92.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:54:22-0400", false, false);
@@ -1324,11 +1324,11 @@ namespace Asa24LoadTest
             yield return request92;
             request92 = null;
 
-            WebTestRequest request93 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request93 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/5fec803d-2625-4d16-9457-f6e899453ece/foods");
             request93.Method = "POST";
             request93.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request93.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request93.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request93.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request93.QueryStringParameters.Add("format", "json", false, false);
             request93.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:54:24-0400", false, false);
@@ -1342,20 +1342,20 @@ namespace Asa24LoadTest
             yield return request93;
             request93 = null;
 
-            WebTestRequest request94 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request94 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request94.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request94.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request94.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request94.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request94.QueryStringParameters.Add("format", "json", false, false);
             request94.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:54:24-0400", false, false);
             yield return request94;
             request94 = null;
 
-            WebTestRequest request95 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request95 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal2);
             request95.Method = "POST";
             request95.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request95.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request95.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request95.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request95.QueryStringParameters.Add("format", "json", false, false);
             request95.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:54:24-0400", false, false);
@@ -1367,9 +1367,9 @@ namespace Asa24LoadTest
             yield return request95;
             request95 = null;
 
-            WebTestRequest request96 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/users/" + UserId + "/favorites");
+            WebTestRequest request96 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/users/" + UserId + "/favorites");
             request96.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request96.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request96.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request96.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request96.QueryStringParameters.Add("fltType", "undefined", false, false);
             request96.QueryStringParameters.Add("format", "json", false, false);
@@ -1377,31 +1377,31 @@ namespace Asa24LoadTest
             yield return request96;
             request96 = null;
 
-            WebTestRequest request97 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request97 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request97.ThinkTime = 3;
             request97.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request97.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/"+ meal2));
+            request97.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/"+ meal2));
             request97.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request97.QueryStringParameters.Add("format", "json", false, false);
             request97.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:54:25-0400", false, false);
             yield return request97;
             request97 = null;
 
-            WebTestRequest request98 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/users/" + UserId + "/language");
+            WebTestRequest request98 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/users/" + UserId + "/language");
             request98.ThinkTime = 19;
             request98.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request98.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/my-food-and-drinks"));
+            request98.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/my-food-and-drinks"));
             request98.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request98.QueryStringParameters.Add("format", "json", false, false);
             request98.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:54:28-0400", false, false);
             yield return request98;
             request98 = null;
 
-            WebTestRequest request99 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request99 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "");
             request99.Method = "POST";
             request99.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request99.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/meal/new"));
+            request99.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/meal/new"));
             request99.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request99.QueryStringParameters.Add("format", "json", false, false);
             request99.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:54:47-0400", false, false);
@@ -1413,29 +1413,29 @@ namespace Asa24LoadTest
             yield return request99;
             request99 = null;
 
-            WebTestRequest request100 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request100 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request100.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request100.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/meal/new"));
+            request100.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/meal/new"));
             request100.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request100.QueryStringParameters.Add("format", "json", false, false);
             request100.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:54:52-0400", false, false);
             yield return request100;
             request100 = null;
 
-            WebTestRequest request101 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request101 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/8c0d0799-090e-4ffe-bf87-3e1a63b5eb4d");
             request101.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request101.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/meal/new"));
+            request101.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/meal/new"));
             request101.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request101.QueryStringParameters.Add("format", "json", false, false);
             request101.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:54:52-0400", false, false);
             yield return request101;
             request101 = null;
 
-            WebTestRequest request102 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/users/" + UserId + "/favorites");
+            WebTestRequest request102 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/users/" + UserId + "/favorites");
             request102.ThinkTime = 9;
             request102.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request102.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/meal/new"));
+            request102.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/meal/new"));
             request102.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request102.QueryStringParameters.Add("fltType", "both", false, false);
             request102.QueryStringParameters.Add("format", "json", false, false);
@@ -1443,11 +1443,11 @@ namespace Asa24LoadTest
             yield return request102;
             request102 = null;
 
-            WebTestRequest request103 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/search");
+            WebTestRequest request103 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/search");
             request103.ThinkTime = 1;
             request103.Method = "POST";
             request103.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request103.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/8c0d0799-090e-4ffe-bf87-3e1a63b5eb4d"));
+            request103.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/8c0d0799-090e-4ffe-bf87-3e1a63b5eb4d"));
             request103.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request103.QueryStringParameters.Add("format", "json", false, false);
             request103.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:55:00-0400", false, false);
@@ -1459,11 +1459,11 @@ namespace Asa24LoadTest
             yield return request103;
             request103 = null;
 
-            WebTestRequest request104 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/searchresults");
+            WebTestRequest request104 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/searchresults");
             request104.ThinkTime = 2;
             request104.Method = "POST";
             request104.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request104.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/8c0d0799-090e-4ffe-bf87-3e1a63b5eb4d"));
+            request104.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/8c0d0799-090e-4ffe-bf87-3e1a63b5eb4d"));
             request104.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request104.QueryStringParameters.Add("format", "json", false, false);
             request104.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:55:02-0400", false, false);
@@ -1476,11 +1476,11 @@ namespace Asa24LoadTest
             yield return request104;
             request104 = null;
 
-            WebTestRequest request105 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request105 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/8c0d0799-090e-4ffe-bf87-3e1a63b5eb4d/foods");
             request105.Method = "POST";
             request105.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request105.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/8c0d0799-090e-4ffe-bf87-3e1a63b5eb4d"));
+            request105.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/8c0d0799-090e-4ffe-bf87-3e1a63b5eb4d"));
             request105.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request105.QueryStringParameters.Add("format", "json", false, false);
             request105.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:55:03-0400", false, false);
@@ -1494,20 +1494,20 @@ namespace Asa24LoadTest
             yield return request105;
             request105 = null;
 
-            WebTestRequest request106 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request106 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request106.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request106.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/8c0d0799-090e-4ffe-bf87-3e1a63b5eb4d"));
+            request106.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/8c0d0799-090e-4ffe-bf87-3e1a63b5eb4d"));
             request106.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request106.QueryStringParameters.Add("format", "json", false, false);
             request106.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:55:04-0400", false, false);
             yield return request106;
             request106 = null;
 
-            WebTestRequest request107 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request107 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/8c0d0799-090e-4ffe-bf87-3e1a63b5eb4d");
             request107.Method = "POST";
             request107.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request107.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/8c0d0799-090e-4ffe-bf87-3e1a63b5eb4d"));
+            request107.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/8c0d0799-090e-4ffe-bf87-3e1a63b5eb4d"));
             request107.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request107.QueryStringParameters.Add("format", "json", false, false);
             request107.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:55:04-0400", false, false);
@@ -1519,9 +1519,9 @@ namespace Asa24LoadTest
             yield return request107;
             request107 = null;
 
-            WebTestRequest request108 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/users/" + UserId + "/favorites");
+            WebTestRequest request108 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/users/" + UserId + "/favorites");
             request108.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request108.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/8c0d0799-090e-4ffe-bf87-3e1a63b5eb4d"));
+            request108.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/8c0d0799-090e-4ffe-bf87-3e1a63b5eb4d"));
             request108.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request108.QueryStringParameters.Add("fltType", "undefined", false, false);
             request108.QueryStringParameters.Add("format", "json", false, false);
@@ -1529,22 +1529,22 @@ namespace Asa24LoadTest
             yield return request108;
             request108 = null;
 
-            WebTestRequest request109 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request109 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request109.ThinkTime = 2;
             request109.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request109.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/find-food/8c0d0799-090e-4ffe-bf87-3e1a63b5eb4d"));
+            request109.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/find-food/8c0d0799-090e-4ffe-bf87-3e1a63b5eb4d"));
             request109.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request109.QueryStringParameters.Add("format", "json", false, false);
             request109.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:55:04-0400", false, false);
             yield return request109;
             request109 = null;
 
-            WebTestRequest request110 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/modul" +
+            WebTestRequest request110 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/modul" +
                     "es/mealGapReview/completed");
             request110.ThinkTime = 27;
             request110.Method = "POST";
             request110.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request110.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/my-food-and-drinks"));
+            request110.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/my-food-and-drinks"));
             request110.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request110.QueryStringParameters.Add("format", "json", false, false);
             request110.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:55:07-0400", false, false);
@@ -1556,20 +1556,20 @@ namespace Asa24LoadTest
             yield return request110;
             request110 = null;
 
-            WebTestRequest request111 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request111 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request111.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request111.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/my-food-and-drinks"));
+            request111.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/my-food-and-drinks"));
             request111.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request111.QueryStringParameters.Add("format", "json", false, false);
             request111.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:55:34-0400", false, false);
             yield return request111;
             request111 = null;
 
-            WebTestRequest request112 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/70997f50-d64a-4b10-a48d-91ab60363ca9/childre" +
+            WebTestRequest request112 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/70997f50-d64a-4b10-a48d-91ab60363ca9/childre" +
                     "n");
             request112.ThinkTime = 26;
             request112.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request112.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request112.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request112.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request112.QueryStringParameters.Add("format", "json", false, false);
             request112.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:55:34-0400", false, false);
@@ -1581,12 +1581,12 @@ namespace Asa24LoadTest
             yield return request112;
             request112 = null;
 
-            WebTestRequest request113 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request113 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal2+"/foods/f60487d9-9981-44a7-b50d-26b7be15de15" +
                     "/details");
             request113.Method = "POST";
             request113.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request113.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request113.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request113.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request113.QueryStringParameters.Add("format", "json", false, false);
             request113.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:00-0400", false, false);
@@ -1599,20 +1599,20 @@ namespace Asa24LoadTest
             yield return request113;
             request113 = null;
 
-            WebTestRequest request114 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request114 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request114.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request114.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request114.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request114.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request114.QueryStringParameters.Add("format", "json", false, false);
             request114.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:03-0400", false, false);
             yield return request114;
             request114 = null;
 
-            WebTestRequest request115 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/0f5cd148-58ca-4272-a8f9-f3c68021829d/childre" +
+            WebTestRequest request115 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/0f5cd148-58ca-4272-a8f9-f3c68021829d/childre" +
                     "n");
             request115.ThinkTime = 4;
             request115.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request115.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request115.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request115.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request115.QueryStringParameters.Add("format", "json", false, false);
             request115.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:04-0400", false, false);
@@ -1624,12 +1624,12 @@ namespace Asa24LoadTest
             yield return request115;
             request115 = null;
 
-            WebTestRequest request116 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request116 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal2+"/foods/f60487d9-9981-44a7-b50d-26b7be15de15" +
                     "/details");
             request116.Method = "POST";
             request116.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request116.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request116.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request116.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request116.QueryStringParameters.Add("format", "json", false, false);
             request116.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:08-0400", false, false);
@@ -1642,20 +1642,20 @@ namespace Asa24LoadTest
             yield return request116;
             request116 = null;
 
-            WebTestRequest request117 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request117 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request117.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request117.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request117.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request117.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request117.QueryStringParameters.Add("format", "json", false, false);
             request117.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:08-0400", false, false);
             yield return request117;
             request117 = null;
 
-            WebTestRequest request118 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/9b621ec5-aab6-430d-b3aa-94ca1b12bee4/childre" +
+            WebTestRequest request118 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/9b621ec5-aab6-430d-b3aa-94ca1b12bee4/childre" +
                     "n");
             request118.ThinkTime = 3;
             request118.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request118.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request118.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request118.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request118.QueryStringParameters.Add("format", "json", false, false);
             request118.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:08-0400", false, false);
@@ -1667,12 +1667,12 @@ namespace Asa24LoadTest
             yield return request118;
             request118 = null;
 
-            WebTestRequest request119 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request119 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal2+"/foods/f60487d9-9981-44a7-b50d-26b7be15de15" +
                     "/details");
             request119.Method = "POST";
             request119.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request119.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request119.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request119.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request119.QueryStringParameters.Add("format", "json", false, false);
             request119.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:11-0400", false, false);
@@ -1685,20 +1685,20 @@ namespace Asa24LoadTest
             yield return request119;
             request119 = null;
 
-            WebTestRequest request120 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request120 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request120.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request120.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request120.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request120.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request120.QueryStringParameters.Add("format", "json", false, false);
             request120.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:11-0400", false, false);
             yield return request120;
             request120 = null;
 
-            WebTestRequest request121 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/11331e48-0690-4f76-83a0-8fa4a80545b1/childre" +
+            WebTestRequest request121 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/11331e48-0690-4f76-83a0-8fa4a80545b1/childre" +
                     "n");
             request121.ThinkTime = 5;
             request121.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request121.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request121.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request121.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request121.QueryStringParameters.Add("format", "json", false, false);
             request121.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:12-0400", false, false);
@@ -1710,12 +1710,12 @@ namespace Asa24LoadTest
             yield return request121;
             request121 = null;
 
-            WebTestRequest request122 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request122 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal2+"/foods/f60487d9-9981-44a7-b50d-26b7be15de15" +
                     "/details");
             request122.Method = "POST";
             request122.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request122.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request122.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request122.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request122.QueryStringParameters.Add("format", "json", false, false);
             request122.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:17-0400", false, false);
@@ -1728,20 +1728,20 @@ namespace Asa24LoadTest
             yield return request122;
             request122 = null;
 
-            WebTestRequest request123 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request123 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request123.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request123.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request123.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request123.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request123.QueryStringParameters.Add("format", "json", false, false);
             request123.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:17-0400", false, false);
             yield return request123;
             request123 = null;
 
-            WebTestRequest request124 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/e58ab380-d4a1-404f-90f5-f81beea984ab/childre" +
+            WebTestRequest request124 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/e58ab380-d4a1-404f-90f5-f81beea984ab/childre" +
                     "n");
             request124.ThinkTime = 3;
             request124.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request124.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request124.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request124.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request124.QueryStringParameters.Add("format", "json", false, false);
             request124.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:17-0400", false, false);
@@ -1753,12 +1753,12 @@ namespace Asa24LoadTest
             yield return request124;
             request124 = null;
 
-            WebTestRequest request125 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request125 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal2+"/foods/f60487d9-9981-44a7-b50d-26b7be15de15" +
                     "/details");
             request125.Method = "POST";
             request125.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request125.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request125.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request125.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request125.QueryStringParameters.Add("format", "json", false, false);
             request125.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:20-0400", false, false);
@@ -1771,20 +1771,20 @@ namespace Asa24LoadTest
             yield return request125;
             request125 = null;
 
-            WebTestRequest request126 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request126 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request126.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request126.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request126.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request126.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request126.QueryStringParameters.Add("format", "json", false, false);
             request126.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:20-0400", false, false);
             yield return request126;
             request126 = null;
 
-            WebTestRequest request127 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/453b71e0-c5a8-4223-81f8-990870a605f9/childre" +
+            WebTestRequest request127 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/453b71e0-c5a8-4223-81f8-990870a605f9/childre" +
                     "n");
             request127.ThinkTime = 10;
             request127.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request127.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request127.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request127.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request127.QueryStringParameters.Add("format", "json", false, false);
             request127.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:21-0400", false, false);
@@ -1796,12 +1796,12 @@ namespace Asa24LoadTest
             yield return request127;
             request127 = null;
 
-            WebTestRequest request128 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request128 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal2+"/foods/f60487d9-9981-44a7-b50d-26b7be15de15" +
                     "/details");
             request128.Method = "POST";
             request128.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request128.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request128.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request128.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request128.QueryStringParameters.Add("format", "json", false, false);
             request128.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:31-0400", false, false);
@@ -1814,20 +1814,20 @@ namespace Asa24LoadTest
             yield return request128;
             request128 = null;
 
-            WebTestRequest request129 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request129 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request129.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request129.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request129.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request129.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request129.QueryStringParameters.Add("format", "json", false, false);
             request129.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:31-0400", false, false);
             yield return request129;
             request129 = null;
 
-            WebTestRequest request130 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/6484dc8d-e4d4-4e97-a529-22b968ffc40d/childre" +
+            WebTestRequest request130 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/6484dc8d-e4d4-4e97-a529-22b968ffc40d/childre" +
                     "n");
             request130.ThinkTime = 7;
             request130.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request130.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request130.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request130.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request130.QueryStringParameters.Add("format", "json", false, false);
             request130.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:31-0400", false, false);
@@ -1839,10 +1839,10 @@ namespace Asa24LoadTest
             yield return request130;
             request130 = null;
 
-            WebTestRequest request131 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request131 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request131.Method = "POST";
             request131.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request131.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request131.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request131.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request131.QueryStringParameters.Add("format", "json", false, false);
             request131.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:38-0400", false, false);
@@ -1854,10 +1854,10 @@ namespace Asa24LoadTest
             yield return request131;
             request131 = null;
 
-            WebTestRequest request132 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request132 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request132.Method = "POST";
             request132.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request132.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request132.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request132.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request132.QueryStringParameters.Add("format", "json", false, false);
             request132.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:39-0400", false, false);
@@ -1869,10 +1869,10 @@ namespace Asa24LoadTest
             yield return request132;
             request132 = null;
 
-            WebTestRequest request133 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request133 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request133.Method = "POST";
             request133.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request133.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request133.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request133.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request133.QueryStringParameters.Add("format", "json", false, false);
             request133.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:39-0400", false, false);
@@ -1884,10 +1884,10 @@ namespace Asa24LoadTest
             yield return request133;
             request133 = null;
 
-            WebTestRequest request134 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request134 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request134.Method = "POST";
             request134.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request134.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request134.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request134.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request134.QueryStringParameters.Add("format", "json", false, false);
             request134.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:39-0400", false, false);
@@ -1899,10 +1899,10 @@ namespace Asa24LoadTest
             yield return request134;
             request134 = null;
 
-            WebTestRequest request135 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request135 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request135.Method = "POST";
             request135.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request135.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request135.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request135.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request135.QueryStringParameters.Add("format", "json", false, false);
             request135.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:39-0400", false, false);
@@ -1914,10 +1914,10 @@ namespace Asa24LoadTest
             yield return request135;
             request135 = null;
 
-            WebTestRequest request136 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request136 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request136.Method = "POST";
             request136.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request136.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request136.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request136.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request136.QueryStringParameters.Add("format", "json", false, false);
             request136.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:39-0400", false, false);
@@ -1929,10 +1929,10 @@ namespace Asa24LoadTest
             yield return request136;
             request136 = null;
 
-            WebTestRequest request137 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request137 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request137.Method = "POST";
             request137.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request137.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request137.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request137.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request137.QueryStringParameters.Add("format", "json", false, false);
             request137.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:39-0400", false, false);
@@ -1944,10 +1944,10 @@ namespace Asa24LoadTest
             yield return request137;
             request137 = null;
 
-            WebTestRequest request138 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request138 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request138.Method = "POST";
             request138.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request138.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request138.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request138.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request138.QueryStringParameters.Add("format", "json", false, false);
             request138.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:39-0400", false, false);
@@ -1959,10 +1959,10 @@ namespace Asa24LoadTest
             yield return request138;
             request138 = null;
 
-            WebTestRequest request139 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request139 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request139.Method = "POST";
             request139.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request139.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request139.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request139.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request139.QueryStringParameters.Add("format", "json", false, false);
             request139.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:39-0400", false, false);
@@ -1974,10 +1974,10 @@ namespace Asa24LoadTest
             yield return request139;
             request139 = null;
 
-            WebTestRequest request140 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request140 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request140.Method = "POST";
             request140.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request140.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request140.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request140.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request140.QueryStringParameters.Add("format", "json", false, false);
             request140.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:39-0400", false, false);
@@ -1989,10 +1989,10 @@ namespace Asa24LoadTest
             yield return request140;
             request140 = null;
 
-            WebTestRequest request141 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request141 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request141.Method = "POST";
             request141.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request141.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request141.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request141.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request141.QueryStringParameters.Add("format", "json", false, false);
             request141.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:39-0400", false, false);
@@ -2004,10 +2004,10 @@ namespace Asa24LoadTest
             yield return request141;
             request141 = null;
 
-            WebTestRequest request142 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request142 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request142.Method = "POST";
             request142.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request142.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request142.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request142.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request142.QueryStringParameters.Add("format", "json", false, false);
             request142.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:39-0400", false, false);
@@ -2019,10 +2019,10 @@ namespace Asa24LoadTest
             yield return request142;
             request142 = null;
 
-            WebTestRequest request143 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request143 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request143.Method = "POST";
             request143.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request143.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request143.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request143.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request143.QueryStringParameters.Add("format", "json", false, false);
             request143.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:40-0400", false, false);
@@ -2034,10 +2034,10 @@ namespace Asa24LoadTest
             yield return request143;
             request143 = null;
 
-            WebTestRequest request144 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request144 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request144.Method = "POST";
             request144.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request144.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request144.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request144.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request144.QueryStringParameters.Add("format", "json", false, false);
             request144.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:40-0400", false, false);
@@ -2049,10 +2049,10 @@ namespace Asa24LoadTest
             yield return request144;
             request144 = null;
 
-            WebTestRequest request145 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request145 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request145.Method = "POST";
             request145.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request145.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request145.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request145.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request145.QueryStringParameters.Add("format", "json", false, false);
             request145.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:40-0400", false, false);
@@ -2064,10 +2064,10 @@ namespace Asa24LoadTest
             yield return request145;
             request145 = null;
 
-            WebTestRequest request146 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request146 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request146.Method = "POST";
             request146.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request146.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request146.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request146.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request146.QueryStringParameters.Add("format", "json", false, false);
             request146.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:40-0400", false, false);
@@ -2079,10 +2079,10 @@ namespace Asa24LoadTest
             yield return request146;
             request146 = null;
 
-            WebTestRequest request147 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request147 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request147.Method = "POST";
             request147.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request147.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request147.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request147.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request147.QueryStringParameters.Add("format", "json", false, false);
             request147.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:40-0400", false, false);
@@ -2094,10 +2094,10 @@ namespace Asa24LoadTest
             yield return request147;
             request147 = null;
 
-            WebTestRequest request148 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request148 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request148.Method = "POST";
             request148.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request148.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request148.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request148.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request148.QueryStringParameters.Add("format", "json", false, false);
             request148.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:40-0400", false, false);
@@ -2109,10 +2109,10 @@ namespace Asa24LoadTest
             yield return request148;
             request148 = null;
 
-            WebTestRequest request149 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request149 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request149.Method = "POST";
             request149.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request149.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request149.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request149.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request149.QueryStringParameters.Add("format", "json", false, false);
             request149.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:40-0400", false, false);
@@ -2124,10 +2124,10 @@ namespace Asa24LoadTest
             yield return request149;
             request149 = null;
 
-            WebTestRequest request150 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request150 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request150.Method = "POST";
             request150.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request150.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request150.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request150.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request150.QueryStringParameters.Add("format", "json", false, false);
             request150.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:40-0400", false, false);
@@ -2139,10 +2139,10 @@ namespace Asa24LoadTest
             yield return request150;
             request150 = null;
 
-            WebTestRequest request151 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request151 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request151.Method = "POST";
             request151.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request151.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request151.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request151.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request151.QueryStringParameters.Add("format", "json", false, false);
             request151.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:40-0400", false, false);
@@ -2154,10 +2154,10 @@ namespace Asa24LoadTest
             yield return request151;
             request151 = null;
 
-            WebTestRequest request152 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request152 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request152.Method = "POST";
             request152.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request152.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request152.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request152.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request152.QueryStringParameters.Add("format", "json", false, false);
             request152.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:40-0400", false, false);
@@ -2169,10 +2169,10 @@ namespace Asa24LoadTest
             yield return request152;
             request152 = null;
 
-            WebTestRequest request153 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request153 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request153.Method = "POST";
             request153.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request153.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request153.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request153.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request153.QueryStringParameters.Add("format", "json", false, false);
             request153.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:41-0400", false, false);
@@ -2184,10 +2184,10 @@ namespace Asa24LoadTest
             yield return request153;
             request153 = null;
 
-            WebTestRequest request154 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request154 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request154.Method = "POST";
             request154.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request154.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request154.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request154.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request154.QueryStringParameters.Add("format", "json", false, false);
             request154.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:41-0400", false, false);
@@ -2199,10 +2199,10 @@ namespace Asa24LoadTest
             yield return request154;
             request154 = null;
 
-            WebTestRequest request155 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request155 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request155.Method = "POST";
             request155.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request155.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request155.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request155.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request155.QueryStringParameters.Add("format", "json", false, false);
             request155.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:41-0400", false, false);
@@ -2214,10 +2214,10 @@ namespace Asa24LoadTest
             yield return request155;
             request155 = null;
 
-            WebTestRequest request156 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request156 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request156.Method = "POST";
             request156.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request156.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request156.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request156.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request156.QueryStringParameters.Add("format", "json", false, false);
             request156.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:41-0400", false, false);
@@ -2229,10 +2229,10 @@ namespace Asa24LoadTest
             yield return request156;
             request156 = null;
 
-            WebTestRequest request157 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request157 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request157.Method = "POST";
             request157.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request157.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request157.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request157.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request157.QueryStringParameters.Add("format", "json", false, false);
             request157.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:41-0400", false, false);
@@ -2244,10 +2244,10 @@ namespace Asa24LoadTest
             yield return request157;
             request157 = null;
 
-            WebTestRequest request158 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request158 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request158.Method = "POST";
             request158.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request158.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request158.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request158.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request158.QueryStringParameters.Add("format", "json", false, false);
             request158.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:41-0400", false, false);
@@ -2259,10 +2259,10 @@ namespace Asa24LoadTest
             yield return request158;
             request158 = null;
 
-            WebTestRequest request159 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request159 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request159.Method = "POST";
             request159.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request159.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request159.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request159.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request159.QueryStringParameters.Add("format", "json", false, false);
             request159.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:42-0400", false, false);
@@ -2274,10 +2274,10 @@ namespace Asa24LoadTest
             yield return request159;
             request159 = null;
 
-            WebTestRequest request160 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request160 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request160.Method = "POST";
             request160.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request160.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request160.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request160.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request160.QueryStringParameters.Add("format", "json", false, false);
             request160.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:42-0400", false, false);
@@ -2289,10 +2289,10 @@ namespace Asa24LoadTest
             yield return request160;
             request160 = null;
 
-            WebTestRequest request161 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request161 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request161.Method = "POST";
             request161.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request161.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request161.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request161.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request161.QueryStringParameters.Add("format", "json", false, false);
             request161.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:42-0400", false, false);
@@ -2304,10 +2304,10 @@ namespace Asa24LoadTest
             yield return request161;
             request161 = null;
 
-            WebTestRequest request162 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request162 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request162.Method = "POST";
             request162.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request162.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request162.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request162.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request162.QueryStringParameters.Add("format", "json", false, false);
             request162.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:42-0400", false, false);
@@ -2319,10 +2319,10 @@ namespace Asa24LoadTest
             yield return request162;
             request162 = null;
 
-            WebTestRequest request163 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request163 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request163.Method = "POST";
             request163.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request163.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request163.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request163.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request163.QueryStringParameters.Add("format", "json", false, false);
             request163.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:42-0400", false, false);
@@ -2334,10 +2334,10 @@ namespace Asa24LoadTest
             yield return request163;
             request163 = null;
 
-            WebTestRequest request164 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request164 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request164.Method = "POST";
             request164.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request164.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request164.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request164.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request164.QueryStringParameters.Add("format", "json", false, false);
             request164.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:42-0400", false, false);
@@ -2349,11 +2349,11 @@ namespace Asa24LoadTest
             yield return request164;
             request164 = null;
 
-            WebTestRequest request165 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/search");
+            WebTestRequest request165 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/search");
             request165.ThinkTime = 2;
             request165.Method = "POST";
             request165.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request165.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request165.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request165.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request165.QueryStringParameters.Add("format", "json", false, false);
             request165.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:42-0400", false, false);
@@ -2365,11 +2365,11 @@ namespace Asa24LoadTest
             yield return request165;
             request165 = null;
 
-            WebTestRequest request166 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/searchresults");
+            WebTestRequest request166 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/searchresults");
             request166.ThinkTime = 1;
             request166.Method = "POST";
             request166.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request166.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request166.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request166.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request166.QueryStringParameters.Add("format", "json", false, false);
             request166.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:45-0400", false, false);
@@ -2383,10 +2383,10 @@ namespace Asa24LoadTest
             yield return request166;
             request166 = null;
 
-            WebTestRequest request167 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request167 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request167.Method = "POST";
             request167.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request167.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request167.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request167.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request167.QueryStringParameters.Add("format", "json", false, false);
             request167.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:46-0400", false, false);
@@ -2398,10 +2398,10 @@ namespace Asa24LoadTest
             yield return request167;
             request167 = null;
 
-            WebTestRequest request168 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request168 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request168.Method = "POST";
             request168.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request168.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request168.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request168.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request168.QueryStringParameters.Add("format", "json", false, false);
             request168.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:46-0400", false, false);
@@ -2413,10 +2413,10 @@ namespace Asa24LoadTest
             yield return request168;
             request168 = null;
 
-            WebTestRequest request169 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request169 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request169.Method = "POST";
             request169.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request169.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request169.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request169.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request169.QueryStringParameters.Add("format", "json", false, false);
             request169.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:46-0400", false, false);
@@ -2428,10 +2428,10 @@ namespace Asa24LoadTest
             yield return request169;
             request169 = null;
 
-            WebTestRequest request170 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request170 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request170.Method = "POST";
             request170.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request170.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request170.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request170.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request170.QueryStringParameters.Add("format", "json", false, false);
             request170.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:46-0400", false, false);
@@ -2443,10 +2443,10 @@ namespace Asa24LoadTest
             yield return request170;
             request170 = null;
 
-            WebTestRequest request171 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request171 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request171.Method = "POST";
             request171.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request171.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request171.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request171.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request171.QueryStringParameters.Add("format", "json", false, false);
             request171.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:46-0400", false, false);
@@ -2458,10 +2458,10 @@ namespace Asa24LoadTest
             yield return request171;
             request171 = null;
 
-            WebTestRequest request172 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request172 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request172.Method = "POST";
             request172.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request172.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request172.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request172.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request172.QueryStringParameters.Add("format", "json", false, false);
             request172.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:46-0400", false, false);
@@ -2473,10 +2473,10 @@ namespace Asa24LoadTest
             yield return request172;
             request172 = null;
 
-            WebTestRequest request173 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request173 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request173.Method = "POST";
             request173.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request173.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request173.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request173.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request173.QueryStringParameters.Add("format", "json", false, false);
             request173.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:46-0400", false, false);
@@ -2488,11 +2488,11 @@ namespace Asa24LoadTest
             yield return request173;
             request173 = null;
 
-            WebTestRequest request174 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request174 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request174.ThinkTime = 2;
             request174.Method = "POST";
             request174.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request174.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request174.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request174.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request174.QueryStringParameters.Add("format", "json", false, false);
             request174.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:46-0400", false, false);
@@ -2504,11 +2504,11 @@ namespace Asa24LoadTest
             yield return request174;
             request174 = null;
 
-            WebTestRequest request175 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/search");
+            WebTestRequest request175 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/search");
             request175.ThinkTime = 2;
             request175.Method = "POST";
             request175.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request175.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request175.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request175.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request175.QueryStringParameters.Add("format", "json", false, false);
             request175.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:48-0400", false, false);
@@ -2520,11 +2520,11 @@ namespace Asa24LoadTest
             yield return request175;
             request175 = null;
 
-            WebTestRequest request176 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/searchresults");
+            WebTestRequest request176 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/searchresults");
             request176.ThinkTime = 1;
             request176.Method = "POST";
             request176.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request176.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request176.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request176.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request176.QueryStringParameters.Add("format", "json", false, false);
             request176.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:50-0400", false, false);
@@ -2538,12 +2538,12 @@ namespace Asa24LoadTest
             yield return request176;
             request176 = null;
 
-            WebTestRequest request177 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request177 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal2+"/foods/f60487d9-9981-44a7-b50d-26b7be15de15" +
                     "/details");
             request177.Method = "POST";
             request177.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request177.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request177.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request177.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request177.QueryStringParameters.Add("format", "json", false, false);
             request177.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:51-0400", false, false);
@@ -2557,20 +2557,20 @@ namespace Asa24LoadTest
             yield return request177;
             request177 = null;
 
-            WebTestRequest request178 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request178 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request178.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request178.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request178.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request178.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request178.QueryStringParameters.Add("format", "json", false, false);
             request178.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:51-0400", false, false);
             yield return request178;
             request178 = null;
 
-            WebTestRequest request179 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/5a52eb95-4c78-4f6d-b890-362bd7028653/childre" +
+            WebTestRequest request179 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/5a52eb95-4c78-4f6d-b890-362bd7028653/childre" +
                     "n");
             request179.ThinkTime = 3;
             request179.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request179.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request179.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request179.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request179.QueryStringParameters.Add("format", "json", false, false);
             request179.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:52-0400", false, false);
@@ -2582,12 +2582,12 @@ namespace Asa24LoadTest
             yield return request179;
             request179 = null;
 
-            WebTestRequest request180 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request180 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal2+"/foods/f60487d9-9981-44a7-b50d-26b7be15de15" +
                     "/details");
             request180.Method = "POST";
             request180.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request180.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request180.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request180.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request180.QueryStringParameters.Add("format", "json", false, false);
             request180.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:55-0400", false, false);
@@ -2600,20 +2600,20 @@ namespace Asa24LoadTest
             yield return request180;
             request180 = null;
 
-            WebTestRequest request181 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request181 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request181.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request181.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request181.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request181.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request181.QueryStringParameters.Add("format", "json", false, false);
             request181.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:55-0400", false, false);
             yield return request181;
             request181 = null;
 
-            WebTestRequest request182 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/c1a61165-11a3-4a9b-b296-518def6b31c9/childre" +
+            WebTestRequest request182 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/c1a61165-11a3-4a9b-b296-518def6b31c9/childre" +
                     "n");
             request182.ThinkTime = 3;
             request182.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request182.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request182.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request182.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request182.QueryStringParameters.Add("format", "json", false, false);
             request182.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:56-0400", false, false);
@@ -2625,12 +2625,12 @@ namespace Asa24LoadTest
             yield return request182;
             request182 = null;
 
-            WebTestRequest request183 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request183 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal2+"/foods/f60487d9-9981-44a7-b50d-26b7be15de15" +
                     "/details");
             request183.Method = "POST";
             request183.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request183.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request183.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request183.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request183.QueryStringParameters.Add("format", "json", false, false);
             request183.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:58-0400", false, false);
@@ -2643,20 +2643,20 @@ namespace Asa24LoadTest
             yield return request183;
             request183 = null;
 
-            WebTestRequest request184 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request184 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request184.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request184.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request184.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request184.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request184.QueryStringParameters.Add("format", "json", false, false);
             request184.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:59-0400", false, false);
             yield return request184;
             request184 = null;
 
-            WebTestRequest request185 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/8dfba05d-df74-418d-8494-0349bf9e80bf/childre" +
+            WebTestRequest request185 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/8dfba05d-df74-418d-8494-0349bf9e80bf/childre" +
                     "n");
             request185.ThinkTime = 3;
             request185.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request185.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request185.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request185.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request185.QueryStringParameters.Add("format", "json", false, false);
             request185.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:56:59-0400", false, false);
@@ -2668,12 +2668,12 @@ namespace Asa24LoadTest
             yield return request185;
             request185 = null;
 
-            WebTestRequest request186 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request186 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal2+"/foods/f60487d9-9981-44a7-b50d-26b7be15de15" +
                     "/details");
             request186.Method = "POST";
             request186.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request186.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request186.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request186.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request186.QueryStringParameters.Add("format", "json", false, false);
             request186.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:02-0400", false, false);
@@ -2686,20 +2686,20 @@ namespace Asa24LoadTest
             yield return request186;
             request186 = null;
 
-            WebTestRequest request187 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request187 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request187.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request187.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request187.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request187.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request187.QueryStringParameters.Add("format", "json", false, false);
             request187.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:02-0400", false, false);
             yield return request187;
             request187 = null;
 
-            WebTestRequest request188 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/633fefcb-0833-4ccf-aead-39ffe05cf5cc/childre" +
+            WebTestRequest request188 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/633fefcb-0833-4ccf-aead-39ffe05cf5cc/childre" +
                     "n");
             request188.ThinkTime = 3;
             request188.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request188.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request188.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request188.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request188.QueryStringParameters.Add("format", "json", false, false);
             request188.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:02-0400", false, false);
@@ -2711,12 +2711,12 @@ namespace Asa24LoadTest
             yield return request188;
             request188 = null;
 
-            WebTestRequest request189 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request189 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal2+"/foods/f60487d9-9981-44a7-b50d-26b7be15de15" +
                     "/details");
             request189.Method = "POST";
             request189.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request189.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request189.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request189.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request189.QueryStringParameters.Add("format", "json", false, false);
             request189.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:05-0400", false, false);
@@ -2729,20 +2729,20 @@ namespace Asa24LoadTest
             yield return request189;
             request189 = null;
 
-            WebTestRequest request190 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request190 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request190.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request190.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request190.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request190.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request190.QueryStringParameters.Add("format", "json", false, false);
             request190.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:06-0400", false, false);
             yield return request190;
             request190 = null;
 
-            WebTestRequest request191 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/4fd07c9b-6010-4738-aaa9-5668326c1b65/childre" +
+            WebTestRequest request191 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/4fd07c9b-6010-4738-aaa9-5668326c1b65/childre" +
                     "n");
             request191.ThinkTime = 8;
             request191.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request191.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request191.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request191.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request191.QueryStringParameters.Add("format", "json", false, false);
             request191.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:06-0400", false, false);
@@ -2754,12 +2754,12 @@ namespace Asa24LoadTest
             yield return request191;
             request191 = null;
 
-            WebTestRequest request192 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request192 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal2+"/foods/f60487d9-9981-44a7-b50d-26b7be15de15" +
                     "/details");
             request192.Method = "POST";
             request192.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request192.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request192.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request192.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request192.QueryStringParameters.Add("format", "json", false, false);
             request192.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:14-0400", false, false);
@@ -2772,20 +2772,20 @@ namespace Asa24LoadTest
             yield return request192;
             request192 = null;
 
-            WebTestRequest request193 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request193 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request193.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request193.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request193.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request193.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request193.QueryStringParameters.Add("format", "json", false, false);
             request193.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:14-0400", false, false);
             yield return request193;
             request193 = null;
 
-            WebTestRequest request194 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/2a455ea7-079f-449b-bf05-2048c2c5700e/childre" +
+            WebTestRequest request194 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/2a455ea7-079f-449b-bf05-2048c2c5700e/childre" +
                     "n");
             request194.ThinkTime = 4;
             request194.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request194.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request194.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request194.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request194.QueryStringParameters.Add("format", "json", false, false);
             request194.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:15-0400", false, false);
@@ -2797,12 +2797,12 @@ namespace Asa24LoadTest
             yield return request194;
             request194 = null;
 
-            WebTestRequest request195 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request195 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal2+"/foods/f60487d9-9981-44a7-b50d-26b7be15de15" +
                     "/details");
             request195.Method = "POST";
             request195.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request195.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request195.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request195.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request195.QueryStringParameters.Add("format", "json", false, false);
             request195.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:19-0400", false, false);
@@ -2815,20 +2815,20 @@ namespace Asa24LoadTest
             yield return request195;
             request195 = null;
 
-            WebTestRequest request196 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request196 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request196.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request196.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request196.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request196.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request196.QueryStringParameters.Add("format", "json", false, false);
             request196.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:19-0400", false, false);
             yield return request196;
             request196 = null;
 
-            WebTestRequest request197 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/9c79ed78-d8c2-4ae0-a1ac-ce3c306026ab/childre" +
+            WebTestRequest request197 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/9c79ed78-d8c2-4ae0-a1ac-ce3c306026ab/childre" +
                     "n");
             request197.ThinkTime = 6;
             request197.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request197.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request197.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request197.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request197.QueryStringParameters.Add("format", "json", false, false);
             request197.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:19-0400", false, false);
@@ -2840,12 +2840,12 @@ namespace Asa24LoadTest
             yield return request197;
             request197 = null;
 
-            WebTestRequest request198 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request198 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal2+"/foods/f60487d9-9981-44a7-b50d-26b7be15de15" +
                     "/details");
             request198.Method = "POST";
             request198.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request198.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request198.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request198.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request198.QueryStringParameters.Add("format", "json", false, false);
             request198.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:25-0400", false, false);
@@ -2858,20 +2858,20 @@ namespace Asa24LoadTest
             yield return request198;
             request198 = null;
 
-            WebTestRequest request199 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request199 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request199.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request199.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request199.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request199.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request199.QueryStringParameters.Add("format", "json", false, false);
             request199.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:25-0400", false, false);
             yield return request199;
             request199 = null;
 
-            WebTestRequest request200 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/c31ecc73-a0d9-4a1c-83b3-aec4324216d5/childre" +
+            WebTestRequest request200 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/c31ecc73-a0d9-4a1c-83b3-aec4324216d5/childre" +
                     "n");
             request200.ThinkTime = 3;
             request200.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request200.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request200.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request200.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request200.QueryStringParameters.Add("format", "json", false, false);
             request200.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:25-0400", false, false);
@@ -2883,12 +2883,12 @@ namespace Asa24LoadTest
             yield return request200;
             request200 = null;
 
-            WebTestRequest request201 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request201 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/"+ meal2+"/foods/f60487d9-9981-44a7-b50d-26b7be15de15" +
                     "/details");
             request201.Method = "POST";
             request201.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request201.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request201.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request201.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request201.QueryStringParameters.Add("format", "json", false, false);
             request201.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:28-0400", false, false);
@@ -2901,20 +2901,20 @@ namespace Asa24LoadTest
             yield return request201;
             request201 = null;
 
-            WebTestRequest request202 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request202 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request202.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request202.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request202.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request202.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request202.QueryStringParameters.Add("format", "json", false, false);
             request202.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:30-0400", false, false);
             yield return request202;
             request202 = null;
 
-            WebTestRequest request203 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/f9f715bd-c6e4-42c0-9f6b-7f5aea85b260/childre" +
+            WebTestRequest request203 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/f9f715bd-c6e4-42c0-9f6b-7f5aea85b260/childre" +
                     "n");
             request203.ThinkTime = 8;
             request203.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request203.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request203.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request203.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request203.QueryStringParameters.Add("format", "json", false, false);
             request203.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:30-0400", false, false);
@@ -2926,12 +2926,12 @@ namespace Asa24LoadTest
             yield return request203;
             request203 = null;
 
-            WebTestRequest request204 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request204 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/340eb54d-c8ab-4069-ac6c-a8e9848217fe/foods/2b6fdb96-59e4-42ff-b251-7eee13316712" +
                     "/details");
             request204.Method = "POST";
             request204.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request204.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request204.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request204.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request204.QueryStringParameters.Add("format", "json", false, false);
             request204.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:38-0400", false, false);
@@ -2944,20 +2944,20 @@ namespace Asa24LoadTest
             yield return request204;
             request204 = null;
 
-            WebTestRequest request205 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request205 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request205.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request205.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request205.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request205.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request205.QueryStringParameters.Add("format", "json", false, false);
             request205.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:39-0400", false, false);
             yield return request205;
             request205 = null;
 
-            WebTestRequest request206 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/9bcac858-dee5-47f3-bf33-e7f4435398b4/childre" +
+            WebTestRequest request206 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/9bcac858-dee5-47f3-bf33-e7f4435398b4/childre" +
                     "n");
             request206.ThinkTime = 9;
             request206.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request206.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request206.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request206.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request206.QueryStringParameters.Add("format", "json", false, false);
             request206.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:40-0400", false, false);
@@ -2969,12 +2969,12 @@ namespace Asa24LoadTest
             yield return request206;
             request206 = null;
 
-            WebTestRequest request207 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request207 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/340eb54d-c8ab-4069-ac6c-a8e9848217fe/foods/2b6fdb96-59e4-42ff-b251-7eee13316712" +
                     "/details");
             request207.Method = "POST";
             request207.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request207.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request207.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request207.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request207.QueryStringParameters.Add("format", "json", false, false);
             request207.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:49-0400", false, false);
@@ -2987,20 +2987,20 @@ namespace Asa24LoadTest
             yield return request207;
             request207 = null;
 
-            WebTestRequest request208 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request208 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request208.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request208.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request208.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request208.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request208.QueryStringParameters.Add("format", "json", false, false);
             request208.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:49-0400", false, false);
             yield return request208;
             request208 = null;
 
-            WebTestRequest request209 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/b2ea51e1-edcb-4f4d-824b-469321788106/childre" +
+            WebTestRequest request209 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/b2ea51e1-edcb-4f4d-824b-469321788106/childre" +
                     "n");
             request209.ThinkTime = 4;
             request209.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request209.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request209.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request209.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request209.QueryStringParameters.Add("format", "json", false, false);
             request209.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:49-0400", false, false);
@@ -3012,12 +3012,12 @@ namespace Asa24LoadTest
             yield return request209;
             request209 = null;
 
-            WebTestRequest request210 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request210 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/340eb54d-c8ab-4069-ac6c-a8e9848217fe/foods/2b6fdb96-59e4-42ff-b251-7eee13316712" +
                     "/details");
             request210.Method = "POST";
             request210.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request210.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request210.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request210.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request210.QueryStringParameters.Add("format", "json", false, false);
             request210.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:54-0400", false, false);
@@ -3030,20 +3030,20 @@ namespace Asa24LoadTest
             yield return request210;
             request210 = null;
 
-            WebTestRequest request211 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request211 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request211.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request211.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request211.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request211.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request211.QueryStringParameters.Add("format", "json", false, false);
             request211.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:54-0400", false, false);
             yield return request211;
             request211 = null;
 
-            WebTestRequest request212 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/c60ea066-6ca4-4514-936e-0248e9dd43e0/childre" +
+            WebTestRequest request212 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/c60ea066-6ca4-4514-936e-0248e9dd43e0/childre" +
                     "n");
             request212.ThinkTime = 12;
             request212.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request212.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request212.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request212.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request212.QueryStringParameters.Add("format", "json", false, false);
             request212.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:57:54-0400", false, false);
@@ -3055,10 +3055,10 @@ namespace Asa24LoadTest
             yield return request212;
             request212 = null;
 
-            WebTestRequest request213 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request213 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request213.Method = "POST";
             request213.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request213.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request213.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request213.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request213.QueryStringParameters.Add("format", "json", false, false);
             request213.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:06-0400", false, false);
@@ -3070,10 +3070,10 @@ namespace Asa24LoadTest
             yield return request213;
             request213 = null;
 
-            WebTestRequest request214 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request214 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request214.Method = "POST";
             request214.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request214.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request214.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request214.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request214.QueryStringParameters.Add("format", "json", false, false);
             request214.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:06-0400", false, false);
@@ -3085,10 +3085,10 @@ namespace Asa24LoadTest
             yield return request214;
             request214 = null;
 
-            WebTestRequest request215 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request215 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request215.Method = "POST";
             request215.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request215.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request215.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request215.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request215.QueryStringParameters.Add("format", "json", false, false);
             request215.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:06-0400", false, false);
@@ -3100,10 +3100,10 @@ namespace Asa24LoadTest
             yield return request215;
             request215 = null;
 
-            WebTestRequest request216 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request216 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request216.Method = "POST";
             request216.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request216.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request216.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request216.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request216.QueryStringParameters.Add("format", "json", false, false);
             request216.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:06-0400", false, false);
@@ -3115,10 +3115,10 @@ namespace Asa24LoadTest
             yield return request216;
             request216 = null;
 
-            WebTestRequest request217 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request217 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request217.Method = "POST";
             request217.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request217.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request217.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request217.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request217.QueryStringParameters.Add("format", "json", false, false);
             request217.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:06-0400", false, false);
@@ -3130,10 +3130,10 @@ namespace Asa24LoadTest
             yield return request217;
             request217 = null;
 
-            WebTestRequest request218 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request218 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request218.Method = "POST";
             request218.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request218.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request218.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request218.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request218.QueryStringParameters.Add("format", "json", false, false);
             request218.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:06-0400", false, false);
@@ -3145,10 +3145,10 @@ namespace Asa24LoadTest
             yield return request218;
             request218 = null;
 
-            WebTestRequest request219 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request219 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request219.Method = "POST";
             request219.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request219.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request219.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request219.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request219.QueryStringParameters.Add("format", "json", false, false);
             request219.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:06-0400", false, false);
@@ -3160,11 +3160,11 @@ namespace Asa24LoadTest
             yield return request219;
             request219 = null;
 
-            WebTestRequest request220 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request220 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request220.ThinkTime = 1;
             request220.Method = "POST";
             request220.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request220.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request220.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request220.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request220.QueryStringParameters.Add("format", "json", false, false);
             request220.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:06-0400", false, false);
@@ -3176,11 +3176,11 @@ namespace Asa24LoadTest
             yield return request220;
             request220 = null;
 
-            WebTestRequest request221 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/search");
+            WebTestRequest request221 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/search");
             request221.ThinkTime = 18;
             request221.Method = "POST";
             request221.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request221.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request221.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request221.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request221.QueryStringParameters.Add("format", "json", false, false);
             request221.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:07-0400", false, false);
@@ -3192,10 +3192,10 @@ namespace Asa24LoadTest
             yield return request221;
             request221 = null;
 
-            WebTestRequest request222 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request222 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request222.Method = "POST";
             request222.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request222.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request222.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request222.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request222.QueryStringParameters.Add("format", "json", false, false);
             request222.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:25-0400", false, false);
@@ -3207,10 +3207,10 @@ namespace Asa24LoadTest
             yield return request222;
             request222 = null;
 
-            WebTestRequest request223 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request223 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request223.Method = "POST";
             request223.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request223.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request223.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request223.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request223.QueryStringParameters.Add("format", "json", false, false);
             request223.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:25-0400", false, false);
@@ -3222,10 +3222,10 @@ namespace Asa24LoadTest
             yield return request223;
             request223 = null;
 
-            WebTestRequest request224 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request224 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request224.Method = "POST";
             request224.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request224.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request224.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request224.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request224.QueryStringParameters.Add("format", "json", false, false);
             request224.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:25-0400", false, false);
@@ -3237,10 +3237,10 @@ namespace Asa24LoadTest
             yield return request224;
             request224 = null;
 
-            WebTestRequest request225 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request225 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request225.Method = "POST";
             request225.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request225.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request225.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request225.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request225.QueryStringParameters.Add("format", "json", false, false);
             request225.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:25-0400", false, false);
@@ -3252,10 +3252,10 @@ namespace Asa24LoadTest
             yield return request225;
             request225 = null;
 
-            WebTestRequest request226 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request226 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request226.Method = "POST";
             request226.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request226.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request226.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request226.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request226.QueryStringParameters.Add("format", "json", false, false);
             request226.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:25-0400", false, false);
@@ -3267,10 +3267,10 @@ namespace Asa24LoadTest
             yield return request226;
             request226 = null;
 
-            WebTestRequest request227 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request227 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request227.Method = "POST";
             request227.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request227.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request227.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request227.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request227.QueryStringParameters.Add("format", "json", false, false);
             request227.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:25-0400", false, false);
@@ -3282,10 +3282,10 @@ namespace Asa24LoadTest
             yield return request227;
             request227 = null;
 
-            WebTestRequest request228 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request228 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request228.Method = "POST";
             request228.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request228.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request228.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request228.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request228.QueryStringParameters.Add("format", "json", false, false);
             request228.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:25-0400", false, false);
@@ -3297,10 +3297,10 @@ namespace Asa24LoadTest
             yield return request228;
             request228 = null;
 
-            WebTestRequest request229 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request229 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request229.Method = "POST";
             request229.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request229.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request229.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request229.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request229.QueryStringParameters.Add("format", "json", false, false);
             request229.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:25-0400", false, false);
@@ -3312,10 +3312,10 @@ namespace Asa24LoadTest
             yield return request229;
             request229 = null;
 
-            WebTestRequest request230 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request230 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request230.Method = "POST";
             request230.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request230.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request230.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request230.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request230.QueryStringParameters.Add("format", "json", false, false);
             request230.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:26-0400", false, false);
@@ -3327,10 +3327,10 @@ namespace Asa24LoadTest
             yield return request230;
             request230 = null;
 
-            WebTestRequest request231 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request231 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request231.Method = "POST";
             request231.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request231.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request231.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request231.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request231.QueryStringParameters.Add("format", "json", false, false);
             request231.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:26-0400", false, false);
@@ -3342,10 +3342,10 @@ namespace Asa24LoadTest
             yield return request231;
             request231 = null;
 
-            WebTestRequest request232 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request232 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request232.Method = "POST";
             request232.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request232.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request232.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request232.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request232.QueryStringParameters.Add("format", "json", false, false);
             request232.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:26-0400", false, false);
@@ -3357,10 +3357,10 @@ namespace Asa24LoadTest
             yield return request232;
             request232 = null;
 
-            WebTestRequest request233 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request233 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request233.Method = "POST";
             request233.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request233.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request233.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request233.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request233.QueryStringParameters.Add("format", "json", false, false);
             request233.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:26-0400", false, false);
@@ -3372,10 +3372,10 @@ namespace Asa24LoadTest
             yield return request233;
             request233 = null;
 
-            WebTestRequest request234 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request234 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request234.Method = "POST";
             request234.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request234.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request234.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request234.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request234.QueryStringParameters.Add("format", "json", false, false);
             request234.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:26-0400", false, false);
@@ -3387,10 +3387,10 @@ namespace Asa24LoadTest
             yield return request234;
             request234 = null;
 
-            WebTestRequest request235 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/suggestions");
+            WebTestRequest request235 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/suggestions");
             request235.Method = "POST";
             request235.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request235.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request235.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request235.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request235.QueryStringParameters.Add("format", "json", false, false);
             request235.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:26-0400", false, false);
@@ -3402,11 +3402,11 @@ namespace Asa24LoadTest
             yield return request235;
             request235 = null;
 
-            WebTestRequest request236 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/search");
+            WebTestRequest request236 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/search");
             request236.ThinkTime = 2;
             request236.Method = "POST";
             request236.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request236.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request236.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request236.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request236.QueryStringParameters.Add("format", "json", false, false);
             request236.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:26-0400", false, false);
@@ -3418,11 +3418,11 @@ namespace Asa24LoadTest
             yield return request236;
             request236 = null;
 
-            WebTestRequest request237 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/searchresults");
+            WebTestRequest request237 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/searchresults");
             request237.ThinkTime = 5;
             request237.Method = "POST";
             request237.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request237.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request237.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request237.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request237.QueryStringParameters.Add("format", "json", false, false);
             request237.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:29-0400", false, false);
@@ -3436,12 +3436,12 @@ namespace Asa24LoadTest
             yield return request237;
             request237 = null;
 
-            WebTestRequest request238 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request238 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/340eb54d-c8ab-4069-ac6c-a8e9848217fe/foods/2b6fdb96-59e4-42ff-b251-7eee13316712" +
                     "/details");
             request238.Method = "POST";
             request238.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request238.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request238.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request238.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request238.QueryStringParameters.Add("format", "json", false, false);
             request238.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:33-0400", false, false);
@@ -3454,20 +3454,20 @@ namespace Asa24LoadTest
             yield return request238;
             request238 = null;
 
-            WebTestRequest request239 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request239 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request239.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request239.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request239.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request239.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request239.QueryStringParameters.Add("format", "json", false, false);
             request239.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:34-0400", false, false);
             yield return request239;
             request239 = null;
 
-            WebTestRequest request240 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/6a73f63a-72f8-4dcd-ac07-277990f08646/childre" +
+            WebTestRequest request240 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/6a73f63a-72f8-4dcd-ac07-277990f08646/childre" +
                     "n");
             request240.ThinkTime = 3;
             request240.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request240.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request240.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request240.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request240.QueryStringParameters.Add("format", "json", false, false);
             request240.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:34-0400", false, false);
@@ -3479,12 +3479,12 @@ namespace Asa24LoadTest
             yield return request240;
             request240 = null;
 
-            WebTestRequest request241 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request241 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/340eb54d-c8ab-4069-ac6c-a8e9848217fe/foods/2b6fdb96-59e4-42ff-b251-7eee13316712" +
                     "/details");
             request241.Method = "POST";
             request241.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request241.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request241.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request241.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request241.QueryStringParameters.Add("format", "json", false, false);
             request241.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:37-0400", false, false);
@@ -3497,20 +3497,20 @@ namespace Asa24LoadTest
             yield return request241;
             request241 = null;
 
-            WebTestRequest request242 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request242 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request242.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request242.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request242.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request242.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request242.QueryStringParameters.Add("format", "json", false, false);
             request242.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:37-0400", false, false);
             yield return request242;
             request242 = null;
 
-            WebTestRequest request243 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/0211146a-bf85-4b15-90c3-df69047b807e/childre" +
+            WebTestRequest request243 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/0211146a-bf85-4b15-90c3-df69047b807e/childre" +
                     "n");
             request243.ThinkTime = 3;
             request243.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request243.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request243.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request243.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request243.QueryStringParameters.Add("format", "json", false, false);
             request243.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:38-0400", false, false);
@@ -3522,12 +3522,12 @@ namespace Asa24LoadTest
             yield return request243;
             request243 = null;
 
-            WebTestRequest request244 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request244 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/340eb54d-c8ab-4069-ac6c-a8e9848217fe/foods/2b6fdb96-59e4-42ff-b251-7eee13316712" +
                     "/details");
             request244.Method = "POST";
             request244.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request244.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request244.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request244.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request244.QueryStringParameters.Add("format", "json", false, false);
             request244.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:40-0400", false, false);
@@ -3540,20 +3540,20 @@ namespace Asa24LoadTest
             yield return request244;
             request244 = null;
 
-            WebTestRequest request245 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request245 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request245.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request245.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request245.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request245.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request245.QueryStringParameters.Add("format", "json", false, false);
             request245.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:41-0400", false, false);
             yield return request245;
             request245 = null;
 
-            WebTestRequest request246 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/75160be2-e881-4fce-a346-6eff8c64a2f2/childre" +
+            WebTestRequest request246 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/75160be2-e881-4fce-a346-6eff8c64a2f2/childre" +
                     "n");
             request246.ThinkTime = 4;
             request246.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request246.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request246.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request246.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request246.QueryStringParameters.Add("format", "json", false, false);
             request246.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:41-0400", false, false);
@@ -3565,12 +3565,12 @@ namespace Asa24LoadTest
             yield return request246;
             request246 = null;
 
-            WebTestRequest request247 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request247 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/340eb54d-c8ab-4069-ac6c-a8e9848217fe/foods/2b6fdb96-59e4-42ff-b251-7eee13316712" +
                     "/details");
             request247.Method = "POST";
             request247.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request247.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request247.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request247.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request247.QueryStringParameters.Add("format", "json", false, false);
             request247.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:45-0400", false, false);
@@ -3583,20 +3583,20 @@ namespace Asa24LoadTest
             yield return request247;
             request247 = null;
 
-            WebTestRequest request248 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request248 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request248.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request248.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request248.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request248.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request248.QueryStringParameters.Add("format", "json", false, false);
             request248.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:45-0400", false, false);
             yield return request248;
             request248 = null;
 
-            WebTestRequest request249 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/e4bed628-0aa5-4e5b-9bd4-adffa1beb8ca/childre" +
+            WebTestRequest request249 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/e4bed628-0aa5-4e5b-9bd4-adffa1beb8ca/childre" +
                     "n");
             request249.ThinkTime = 5;
             request249.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request249.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request249.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request249.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request249.QueryStringParameters.Add("format", "json", false, false);
             request249.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:46-0400", false, false);
@@ -3608,12 +3608,12 @@ namespace Asa24LoadTest
             yield return request249;
             request249 = null;
 
-            WebTestRequest request250 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request250 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/340eb54d-c8ab-4069-ac6c-a8e9848217fe/foods/2b6fdb96-59e4-42ff-b251-7eee13316712" +
                     "/details");
             request250.Method = "POST";
             request250.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request250.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request250.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request250.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request250.QueryStringParameters.Add("format", "json", false, false);
             request250.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:51-0400", false, false);
@@ -3626,20 +3626,20 @@ namespace Asa24LoadTest
             yield return request250;
             request250 = null;
 
-            WebTestRequest request251 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request251 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request251.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request251.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request251.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request251.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request251.QueryStringParameters.Add("format", "json", false, false);
             request251.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:52-0400", false, false);
             yield return request251;
             request251 = null;
 
-            WebTestRequest request252 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/90278d00-67e9-404a-acc5-32fc7983e461/childre" +
+            WebTestRequest request252 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/90278d00-67e9-404a-acc5-32fc7983e461/childre" +
                     "n");
             request252.ThinkTime = 2;
             request252.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request252.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request252.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request252.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request252.QueryStringParameters.Add("format", "json", false, false);
             request252.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:52-0400", false, false);
@@ -3651,12 +3651,12 @@ namespace Asa24LoadTest
             yield return request252;
             request252 = null;
 
-            WebTestRequest request253 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request253 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/340eb54d-c8ab-4069-ac6c-a8e9848217fe/foods/2b6fdb96-59e4-42ff-b251-7eee13316712" +
                     "/details");
             request253.Method = "POST";
             request253.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request253.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request253.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request253.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request253.QueryStringParameters.Add("format", "json", false, false);
             request253.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:54-0400", false, false);
@@ -3669,20 +3669,20 @@ namespace Asa24LoadTest
             yield return request253;
             request253 = null;
 
-            WebTestRequest request254 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request254 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request254.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request254.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request254.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request254.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request254.QueryStringParameters.Add("format", "json", false, false);
             request254.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:55-0400", false, false);
             yield return request254;
             request254 = null;
 
-            WebTestRequest request255 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/015a327f-862d-4535-b45a-17d09ef05ba2/childre" +
+            WebTestRequest request255 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/015a327f-862d-4535-b45a-17d09ef05ba2/childre" +
                     "n");
             request255.ThinkTime = 4;
             request255.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request255.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request255.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request255.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request255.QueryStringParameters.Add("format", "json", false, false);
             request255.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:55-0400", false, false);
@@ -3694,12 +3694,12 @@ namespace Asa24LoadTest
             yield return request255;
             request255 = null;
 
-            WebTestRequest request256 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request256 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/340eb54d-c8ab-4069-ac6c-a8e9848217fe/foods/ff8a7360-bf53-46c0-a9ca-fb392f5f3baf" +
                     "/details");
             request256.Method = "POST";
             request256.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request256.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request256.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request256.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request256.QueryStringParameters.Add("format", "json", false, false);
             request256.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:58:59-0400", false, false);
@@ -3712,20 +3712,20 @@ namespace Asa24LoadTest
             yield return request256;
             request256 = null;
 
-            WebTestRequest request257 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request257 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request257.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request257.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request257.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request257.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request257.QueryStringParameters.Add("format", "json", false, false);
             request257.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:01-0400", false, false);
             yield return request257;
             request257 = null;
 
-            WebTestRequest request258 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/9bcac858-dee5-47f3-bf33-e7f4435398b4/childre" +
+            WebTestRequest request258 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/9bcac858-dee5-47f3-bf33-e7f4435398b4/childre" +
                     "n");
             request258.ThinkTime = 7;
             request258.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request258.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request258.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request258.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request258.QueryStringParameters.Add("format", "json", false, false);
             request258.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:01-0400", false, false);
@@ -3737,12 +3737,12 @@ namespace Asa24LoadTest
             yield return request258;
             request258 = null;
 
-            WebTestRequest request259 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request259 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/340eb54d-c8ab-4069-ac6c-a8e9848217fe/foods/ff8a7360-bf53-46c0-a9ca-fb392f5f3baf" +
                     "/details");
             request259.Method = "POST";
             request259.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request259.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request259.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request259.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request259.QueryStringParameters.Add("format", "json", false, false);
             request259.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:08-0400", false, false);
@@ -3755,20 +3755,20 @@ namespace Asa24LoadTest
             yield return request259;
             request259 = null;
 
-            WebTestRequest request260 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request260 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request260.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request260.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request260.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request260.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request260.QueryStringParameters.Add("format", "json", false, false);
             request260.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:08-0400", false, false);
             yield return request260;
             request260 = null;
 
-            WebTestRequest request261 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/736a6178-0f5b-41ac-b943-64a8ac823d99/childre" +
+            WebTestRequest request261 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/736a6178-0f5b-41ac-b943-64a8ac823d99/childre" +
                     "n");
             request261.ThinkTime = 4;
             request261.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request261.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request261.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request261.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request261.QueryStringParameters.Add("format", "json", false, false);
             request261.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:08-0400", false, false);
@@ -3780,12 +3780,12 @@ namespace Asa24LoadTest
             yield return request261;
             request261 = null;
 
-            WebTestRequest request262 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request262 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/340eb54d-c8ab-4069-ac6c-a8e9848217fe/foods/ff8a7360-bf53-46c0-a9ca-fb392f5f3baf" +
                     "/details");
             request262.Method = "POST";
             request262.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request262.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request262.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request262.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request262.QueryStringParameters.Add("format", "json", false, false);
             request262.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:12-0400", false, false);
@@ -3798,20 +3798,20 @@ namespace Asa24LoadTest
             yield return request262;
             request262 = null;
 
-            WebTestRequest request263 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request263 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request263.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request263.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request263.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request263.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request263.QueryStringParameters.Add("format", "json", false, false);
             request263.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:12-0400", false, false);
             yield return request263;
             request263 = null;
 
-            WebTestRequest request264 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/10ff4369-d9fb-4071-ba46-cc3f1803dc86/childre" +
+            WebTestRequest request264 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/10ff4369-d9fb-4071-ba46-cc3f1803dc86/childre" +
                     "n");
             request264.ThinkTime = 3;
             request264.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request264.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request264.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request264.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request264.QueryStringParameters.Add("format", "json", false, false);
             request264.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:12-0400", false, false);
@@ -3823,12 +3823,12 @@ namespace Asa24LoadTest
             yield return request264;
             request264 = null;
 
-            WebTestRequest request265 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request265 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/340eb54d-c8ab-4069-ac6c-a8e9848217fe/foods/ff8a7360-bf53-46c0-a9ca-fb392f5f3baf" +
                     "/details");
             request265.Method = "POST";
             request265.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request265.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request265.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request265.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request265.QueryStringParameters.Add("format", "json", false, false);
             request265.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:15-0400", false, false);
@@ -3841,20 +3841,20 @@ namespace Asa24LoadTest
             yield return request265;
             request265 = null;
 
-            WebTestRequest request266 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request266 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request266.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request266.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request266.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request266.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request266.QueryStringParameters.Add("format", "json", false, false);
             request266.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:15-0400", false, false);
             yield return request266;
             request266 = null;
 
-            WebTestRequest request267 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/e6e58f16-b242-4ad0-869a-63c6258aa671/childre" +
+            WebTestRequest request267 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/e6e58f16-b242-4ad0-869a-63c6258aa671/childre" +
                     "n");
             request267.ThinkTime = 3;
             request267.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request267.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request267.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request267.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request267.QueryStringParameters.Add("format", "json", false, false);
             request267.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:16-0400", false, false);
@@ -3866,12 +3866,12 @@ namespace Asa24LoadTest
             yield return request267;
             request267 = null;
 
-            WebTestRequest request268 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request268 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/340eb54d-c8ab-4069-ac6c-a8e9848217fe/foods/ff8a7360-bf53-46c0-a9ca-fb392f5f3baf" +
                     "/details");
             request268.Method = "POST";
             request268.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request268.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request268.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request268.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request268.QueryStringParameters.Add("format", "json", false, false);
             request268.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:19-0400", false, false);
@@ -3884,20 +3884,20 @@ namespace Asa24LoadTest
             yield return request268;
             request268 = null;
 
-            WebTestRequest request269 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request269 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request269.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request269.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request269.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request269.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request269.QueryStringParameters.Add("format", "json", false, false);
             request269.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:19-0400", false, false);
             yield return request269;
             request269 = null;
 
-            WebTestRequest request270 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/0108f99e-9c25-45d5-941e-9300b6457aed/childre" +
+            WebTestRequest request270 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/0108f99e-9c25-45d5-941e-9300b6457aed/childre" +
                     "n");
             request270.ThinkTime = 4;
             request270.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request270.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request270.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request270.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request270.QueryStringParameters.Add("format", "json", false, false);
             request270.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:19-0400", false, false);
@@ -3909,12 +3909,12 @@ namespace Asa24LoadTest
             yield return request270;
             request270 = null;
 
-            WebTestRequest request271 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request271 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/340eb54d-c8ab-4069-ac6c-a8e9848217fe/foods/71fc6818-4275-468d-b7b0-f5a57174b72c" +
                     "/details");
             request271.Method = "POST";
             request271.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request271.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request271.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request271.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request271.QueryStringParameters.Add("format", "json", false, false);
             request271.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:24-0400", false, false);
@@ -3927,20 +3927,20 @@ namespace Asa24LoadTest
             yield return request271;
             request271 = null;
 
-            WebTestRequest request272 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request272 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request272.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request272.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request272.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request272.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request272.QueryStringParameters.Add("format", "json", false, false);
             request272.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:26-0400", false, false);
             yield return request272;
             request272 = null;
 
-            WebTestRequest request273 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/9bcac858-dee5-47f3-bf33-e7f4435398b4/childre" +
+            WebTestRequest request273 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/9bcac858-dee5-47f3-bf33-e7f4435398b4/childre" +
                     "n");
             request273.ThinkTime = 5;
             request273.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request273.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request273.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request273.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request273.QueryStringParameters.Add("format", "json", false, false);
             request273.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:26-0400", false, false);
@@ -3952,12 +3952,12 @@ namespace Asa24LoadTest
             yield return request273;
             request273 = null;
 
-            WebTestRequest request274 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request274 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/340eb54d-c8ab-4069-ac6c-a8e9848217fe/foods/71fc6818-4275-468d-b7b0-f5a57174b72c" +
                     "/details");
             request274.Method = "POST";
             request274.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request274.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request274.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request274.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request274.QueryStringParameters.Add("format", "json", false, false);
             request274.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:31-0400", false, false);
@@ -3970,20 +3970,20 @@ namespace Asa24LoadTest
             yield return request274;
             request274 = null;
 
-            WebTestRequest request275 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request275 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request275.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request275.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request275.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request275.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request275.QueryStringParameters.Add("format", "json", false, false);
             request275.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:31-0400", false, false);
             yield return request275;
             request275 = null;
 
-            WebTestRequest request276 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/2acf2b0e-a45b-4704-9a69-2da2418b344a/childre" +
+            WebTestRequest request276 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/2acf2b0e-a45b-4704-9a69-2da2418b344a/childre" +
                     "n");
             request276.ThinkTime = 4;
             request276.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request276.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request276.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request276.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request276.QueryStringParameters.Add("format", "json", false, false);
             request276.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:31-0400", false, false);
@@ -3995,12 +3995,12 @@ namespace Asa24LoadTest
             yield return request276;
             request276 = null;
 
-            WebTestRequest request277 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request277 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/3d640d7c-140e-479a-a236-0d57d8dffce5/foods/ef6c54d3-f236-4cbf-83f5-5b513005ca32" +
                     "/details");
             request277.Method = "POST";
             request277.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request277.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request277.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request277.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request277.QueryStringParameters.Add("format", "json", false, false);
             request277.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:36-0400", false, false);
@@ -4013,20 +4013,20 @@ namespace Asa24LoadTest
             yield return request277;
             request277 = null;
 
-            WebTestRequest request278 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request278 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request278.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request278.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request278.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request278.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request278.QueryStringParameters.Add("format", "json", false, false);
             request278.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:37-0400", false, false);
             yield return request278;
             request278 = null;
 
-            WebTestRequest request279 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/7195323f-38c5-41bf-ab9c-efed9974b7ab/childre" +
+            WebTestRequest request279 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/7195323f-38c5-41bf-ab9c-efed9974b7ab/childre" +
                     "n");
             request279.ThinkTime = 4;
             request279.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request279.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request279.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request279.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request279.QueryStringParameters.Add("format", "json", false, false);
             request279.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:38-0400", false, false);
@@ -4038,12 +4038,12 @@ namespace Asa24LoadTest
             yield return request279;
             request279 = null;
 
-            WebTestRequest request280 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request280 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/3d640d7c-140e-479a-a236-0d57d8dffce5/foods/ef6c54d3-f236-4cbf-83f5-5b513005ca32" +
                     "/details");
             request280.Method = "POST";
             request280.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request280.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request280.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request280.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request280.QueryStringParameters.Add("format", "json", false, false);
             request280.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:42-0400", false, false);
@@ -4056,20 +4056,20 @@ namespace Asa24LoadTest
             yield return request280;
             request280 = null;
 
-            WebTestRequest request281 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request281 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request281.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request281.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request281.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request281.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request281.QueryStringParameters.Add("format", "json", false, false);
             request281.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:42-0400", false, false);
             yield return request281;
             request281 = null;
 
-            WebTestRequest request282 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/e811f293-a163-4edd-84c2-8f5520a9612c/childre" +
+            WebTestRequest request282 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/e811f293-a163-4edd-84c2-8f5520a9612c/childre" +
                     "n");
             request282.ThinkTime = 3;
             request282.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request282.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request282.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request282.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request282.QueryStringParameters.Add("format", "json", false, false);
             request282.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:42-0400", false, false);
@@ -4081,12 +4081,12 @@ namespace Asa24LoadTest
             yield return request282;
             request282 = null;
 
-            WebTestRequest request283 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request283 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/3d640d7c-140e-479a-a236-0d57d8dffce5/foods/ef6c54d3-f236-4cbf-83f5-5b513005ca32" +
                     "/details");
             request283.Method = "POST";
             request283.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request283.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request283.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request283.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request283.QueryStringParameters.Add("format", "json", false, false);
             request283.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:45-0400", false, false);
@@ -4099,20 +4099,20 @@ namespace Asa24LoadTest
             yield return request283;
             request283 = null;
 
-            WebTestRequest request284 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request284 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request284.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request284.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request284.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request284.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request284.QueryStringParameters.Add("format", "json", false, false);
             request284.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:45-0400", false, false);
             yield return request284;
             request284 = null;
 
-            WebTestRequest request285 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/727ee4a9-b546-4188-b310-d6f87954ea35/childre" +
+            WebTestRequest request285 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/727ee4a9-b546-4188-b310-d6f87954ea35/childre" +
                     "n");
             request285.ThinkTime = 3;
             request285.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request285.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request285.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request285.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request285.QueryStringParameters.Add("format", "json", false, false);
             request285.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:46-0400", false, false);
@@ -4124,12 +4124,12 @@ namespace Asa24LoadTest
             yield return request285;
             request285 = null;
 
-            WebTestRequest request286 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request286 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/3d640d7c-140e-479a-a236-0d57d8dffce5/foods/ef6c54d3-f236-4cbf-83f5-5b513005ca32" +
                     "/details");
             request286.Method = "POST";
             request286.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request286.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request286.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request286.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request286.QueryStringParameters.Add("format", "json", false, false);
             request286.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:49-0400", false, false);
@@ -4142,20 +4142,20 @@ namespace Asa24LoadTest
             yield return request286;
             request286 = null;
 
-            WebTestRequest request287 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request287 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request287.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request287.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request287.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request287.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request287.QueryStringParameters.Add("format", "json", false, false);
             request287.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:50-0400", false, false);
             yield return request287;
             request287 = null;
 
-            WebTestRequest request288 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/d873bf97-6dd9-4136-a0d3-3dafa13c7efa/childre" +
+            WebTestRequest request288 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/d873bf97-6dd9-4136-a0d3-3dafa13c7efa/childre" +
                     "n");
             request288.ThinkTime = 23;
             request288.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request288.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request288.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request288.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request288.QueryStringParameters.Add("format", "json", false, false);
             request288.QueryStringParameters.Add("RequestDateTime", "2017-06-15T15:59:51-0400", false, false);
@@ -4167,12 +4167,12 @@ namespace Asa24LoadTest
             yield return request288;
             request288 = null;
 
-            WebTestRequest request289 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request289 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/61d7c4c6-eda2-4aaf-afff-f78c6c43e7bb/foods/54cf243d-e65e-44ff-8374-1bba01867687" +
                     "/details");
             request289.Method = "POST";
             request289.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request289.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request289.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request289.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request289.QueryStringParameters.Add("format", "json", false, false);
             request289.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:14-0400", false, false);
@@ -4185,20 +4185,20 @@ namespace Asa24LoadTest
             yield return request289;
             request289 = null;
 
-            WebTestRequest request290 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request290 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request290.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request290.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request290.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request290.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request290.QueryStringParameters.Add("format", "json", false, false);
             request290.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:16-0400", false, false);
             yield return request290;
             request290 = null;
 
-            WebTestRequest request291 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/f3994508-17a5-48a8-b355-a4672a543a84/childre" +
+            WebTestRequest request291 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/f3994508-17a5-48a8-b355-a4672a543a84/childre" +
                     "n");
             request291.ThinkTime = 4;
             request291.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request291.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request291.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request291.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request291.QueryStringParameters.Add("format", "json", false, false);
             request291.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:16-0400", false, false);
@@ -4210,12 +4210,12 @@ namespace Asa24LoadTest
             yield return request291;
             request291 = null;
 
-            WebTestRequest request292 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request292 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/61d7c4c6-eda2-4aaf-afff-f78c6c43e7bb/foods/54cf243d-e65e-44ff-8374-1bba01867687" +
                     "/details");
             request292.Method = "POST";
             request292.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request292.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request292.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request292.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request292.QueryStringParameters.Add("format", "json", false, false);
             request292.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:21-0400", false, false);
@@ -4228,20 +4228,20 @@ namespace Asa24LoadTest
             yield return request292;
             request292 = null;
 
-            WebTestRequest request293 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request293 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request293.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request293.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request293.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request293.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request293.QueryStringParameters.Add("format", "json", false, false);
             request293.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:21-0400", false, false);
             yield return request293;
             request293 = null;
 
-            WebTestRequest request294 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/c89977ab-0d9d-437b-b91d-f8de21ef2e69/childre" +
+            WebTestRequest request294 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/c89977ab-0d9d-437b-b91d-f8de21ef2e69/childre" +
                     "n");
             request294.ThinkTime = 3;
             request294.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request294.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request294.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request294.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request294.QueryStringParameters.Add("format", "json", false, false);
             request294.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:21-0400", false, false);
@@ -4253,12 +4253,12 @@ namespace Asa24LoadTest
             yield return request294;
             request294 = null;
 
-            WebTestRequest request295 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request295 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/61d7c4c6-eda2-4aaf-afff-f78c6c43e7bb/foods/54cf243d-e65e-44ff-8374-1bba01867687" +
                     "/details");
             request295.Method = "POST";
             request295.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request295.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request295.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request295.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request295.QueryStringParameters.Add("format", "json", false, false);
             request295.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:25-0400", false, false);
@@ -4271,20 +4271,20 @@ namespace Asa24LoadTest
             yield return request295;
             request295 = null;
 
-            WebTestRequest request296 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request296 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request296.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request296.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request296.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request296.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request296.QueryStringParameters.Add("format", "json", false, false);
             request296.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:26-0400", false, false);
             yield return request296;
             request296 = null;
 
-            WebTestRequest request297 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/0b1cd23d-4310-48a1-886e-59b119e40fa2/childre" +
+            WebTestRequest request297 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/0b1cd23d-4310-48a1-886e-59b119e40fa2/childre" +
                     "n");
             request297.ThinkTime = 4;
             request297.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request297.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request297.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request297.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request297.QueryStringParameters.Add("format", "json", false, false);
             request297.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:26-0400", false, false);
@@ -4296,12 +4296,12 @@ namespace Asa24LoadTest
             yield return request297;
             request297 = null;
 
-            WebTestRequest request298 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request298 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/61d7c4c6-eda2-4aaf-afff-f78c6c43e7bb/foods/32bf6daa-5941-4a7b-afb4-0b51a86bb04c" +
                     "/details");
             request298.Method = "POST";
             request298.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request298.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request298.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request298.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request298.QueryStringParameters.Add("format", "json", false, false);
             request298.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:30-0400", false, false);
@@ -4314,20 +4314,20 @@ namespace Asa24LoadTest
             yield return request298;
             request298 = null;
 
-            WebTestRequest request299 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request299 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request299.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request299.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request299.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request299.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request299.QueryStringParameters.Add("format", "json", false, false);
             request299.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:32-0400", false, false);
             yield return request299;
             request299 = null;
 
-            WebTestRequest request300 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/26ce7885-da95-4d2d-a26d-cc5381fa123a/childre" +
+            WebTestRequest request300 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/26ce7885-da95-4d2d-a26d-cc5381fa123a/childre" +
                     "n");
             request300.ThinkTime = 4;
             request300.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request300.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request300.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request300.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request300.QueryStringParameters.Add("format", "json", false, false);
             request300.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:32-0400", false, false);
@@ -4339,12 +4339,12 @@ namespace Asa24LoadTest
             yield return request300;
             request300 = null;
 
-            WebTestRequest request301 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request301 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/61d7c4c6-eda2-4aaf-afff-f78c6c43e7bb/foods/32bf6daa-5941-4a7b-afb4-0b51a86bb04c" +
                     "/details");
             request301.Method = "POST";
             request301.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request301.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request301.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request301.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request301.QueryStringParameters.Add("format", "json", false, false);
             request301.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:36-0400", false, false);
@@ -4357,20 +4357,20 @@ namespace Asa24LoadTest
             yield return request301;
             request301 = null;
 
-            WebTestRequest request302 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request302 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request302.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request302.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request302.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request302.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request302.QueryStringParameters.Add("format", "json", false, false);
             request302.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:36-0400", false, false);
             yield return request302;
             request302 = null;
 
-            WebTestRequest request303 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/cd920dd8-5029-4836-bc36-d6e175b43511/childre" +
+            WebTestRequest request303 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/cd920dd8-5029-4836-bc36-d6e175b43511/childre" +
                     "n");
             request303.ThinkTime = 5;
             request303.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request303.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request303.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request303.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request303.QueryStringParameters.Add("format", "json", false, false);
             request303.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:36-0400", false, false);
@@ -4382,12 +4382,12 @@ namespace Asa24LoadTest
             yield return request303;
             request303 = null;
 
-            WebTestRequest request304 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request304 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/61d7c4c6-eda2-4aaf-afff-f78c6c43e7bb/foods/32bf6daa-5941-4a7b-afb4-0b51a86bb04c" +
                     "/details");
             request304.Method = "POST";
             request304.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request304.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request304.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request304.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request304.QueryStringParameters.Add("format", "json", false, false);
             request304.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:42-0400", false, false);
@@ -4400,20 +4400,20 @@ namespace Asa24LoadTest
             yield return request304;
             request304 = null;
 
-            WebTestRequest request305 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request305 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request305.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request305.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request305.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request305.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request305.QueryStringParameters.Add("format", "json", false, false);
             request305.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:42-0400", false, false);
             yield return request305;
             request305 = null;
 
-            WebTestRequest request306 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/91b14bee-effe-4f21-8a35-936363271331/childre" +
+            WebTestRequest request306 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/91b14bee-effe-4f21-8a35-936363271331/childre" +
                     "n");
             request306.ThinkTime = 5;
             request306.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request306.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request306.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request306.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request306.QueryStringParameters.Add("format", "json", false, false);
             request306.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:42-0400", false, false);
@@ -4425,12 +4425,12 @@ namespace Asa24LoadTest
             yield return request306;
             request306 = null;
 
-            WebTestRequest request307 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request307 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/61d7c4c6-eda2-4aaf-afff-f78c6c43e7bb/foods/bd80ad12-93ee-416a-af23-273933ad6140" +
                     "/details");
             request307.Method = "POST";
             request307.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request307.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request307.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request307.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request307.QueryStringParameters.Add("format", "json", false, false);
             request307.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:47-0400", false, false);
@@ -4443,20 +4443,20 @@ namespace Asa24LoadTest
             yield return request307;
             request307 = null;
 
-            WebTestRequest request308 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request308 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request308.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request308.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request308.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request308.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request308.QueryStringParameters.Add("format", "json", false, false);
             request308.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:50-0400", false, false);
             yield return request308;
             request308 = null;
 
-            WebTestRequest request309 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/1ce185ae-5c9c-4398-a459-d43853d99eca/childre" +
+            WebTestRequest request309 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/1ce185ae-5c9c-4398-a459-d43853d99eca/childre" +
                     "n");
             request309.ThinkTime = 4;
             request309.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request309.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request309.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request309.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request309.QueryStringParameters.Add("format", "json", false, false);
             request309.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:50-0400", false, false);
@@ -4468,12 +4468,12 @@ namespace Asa24LoadTest
             yield return request309;
             request309 = null;
 
-            WebTestRequest request310 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request310 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/61d7c4c6-eda2-4aaf-afff-f78c6c43e7bb/foods/bd80ad12-93ee-416a-af23-273933ad6140" +
                     "/details");
             request310.Method = "POST";
             request310.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request310.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request310.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request310.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request310.QueryStringParameters.Add("format", "json", false, false);
             request310.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:54-0400", false, false);
@@ -4486,20 +4486,20 @@ namespace Asa24LoadTest
             yield return request310;
             request310 = null;
 
-            WebTestRequest request311 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request311 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request311.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request311.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request311.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request311.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request311.QueryStringParameters.Add("format", "json", false, false);
             request311.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:54-0400", false, false);
             yield return request311;
             request311 = null;
 
-            WebTestRequest request312 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/1668a32f-3d54-47aa-ae64-e138e696d05f/childre" +
+            WebTestRequest request312 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/1668a32f-3d54-47aa-ae64-e138e696d05f/childre" +
                     "n");
             request312.ThinkTime = 2;
             request312.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request312.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request312.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request312.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request312.QueryStringParameters.Add("format", "json", false, false);
             request312.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:54-0400", false, false);
@@ -4511,12 +4511,12 @@ namespace Asa24LoadTest
             yield return request312;
             request312 = null;
 
-            WebTestRequest request313 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request313 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/61d7c4c6-eda2-4aaf-afff-f78c6c43e7bb/foods/bd80ad12-93ee-416a-af23-273933ad6140" +
                     "/details");
             request313.Method = "POST";
             request313.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request313.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request313.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request313.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request313.QueryStringParameters.Add("format", "json", false, false);
             request313.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:57-0400", false, false);
@@ -4529,20 +4529,20 @@ namespace Asa24LoadTest
             yield return request313;
             request313 = null;
 
-            WebTestRequest request314 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request314 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request314.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request314.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request314.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request314.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request314.QueryStringParameters.Add("format", "json", false, false);
             request314.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:57-0400", false, false);
             yield return request314;
             request314 = null;
 
-            WebTestRequest request315 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/f5c35955-4caa-45e5-b894-da67797c9939/childre" +
+            WebTestRequest request315 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/f5c35955-4caa-45e5-b894-da67797c9939/childre" +
                     "n");
             request315.ThinkTime = 13;
             request315.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request315.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request315.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request315.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request315.QueryStringParameters.Add("format", "json", false, false);
             request315.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:00:57-0400", false, false);
@@ -4554,12 +4554,12 @@ namespace Asa24LoadTest
             yield return request315;
             request315 = null;
 
-            WebTestRequest request316 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request316 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/5fec803d-2625-4d16-9457-f6e899453ece/foods/d171066a-cb96-4511-87f3-e31157f54de1" +
                     "/details");
             request316.Method = "POST";
             request316.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request316.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request316.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request316.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request316.QueryStringParameters.Add("format", "json", false, false);
             request316.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:01:10-0400", false, false);
@@ -4572,20 +4572,20 @@ namespace Asa24LoadTest
             yield return request316;
             request316 = null;
 
-            WebTestRequest request317 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request317 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request317.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request317.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request317.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request317.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request317.QueryStringParameters.Add("format", "json", false, false);
             request317.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:01:12-0400", false, false);
             yield return request317;
             request317 = null;
 
-            WebTestRequest request318 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/69b540ae-a1ea-414b-9848-c20c8302da4e/childre" +
+            WebTestRequest request318 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/69b540ae-a1ea-414b-9848-c20c8302da4e/childre" +
                     "n");
             request318.ThinkTime = 2;
             request318.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request318.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request318.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request318.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request318.QueryStringParameters.Add("format", "json", false, false);
             request318.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:01:12-0400", false, false);
@@ -4597,12 +4597,12 @@ namespace Asa24LoadTest
             yield return request318;
             request318 = null;
 
-            WebTestRequest request319 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request319 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/5fec803d-2625-4d16-9457-f6e899453ece/foods/d171066a-cb96-4511-87f3-e31157f54de1" +
                     "/details");
             request319.Method = "POST";
             request319.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request319.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request319.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request319.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request319.QueryStringParameters.Add("format", "json", false, false);
             request319.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:01:15-0400", false, false);
@@ -4615,20 +4615,20 @@ namespace Asa24LoadTest
             yield return request319;
             request319 = null;
 
-            WebTestRequest request320 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request320 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request320.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request320.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request320.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request320.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request320.QueryStringParameters.Add("format", "json", false, false);
             request320.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:01:15-0400", false, false);
             yield return request320;
             request320 = null;
 
-            WebTestRequest request321 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/51c9136b-2b32-4830-9044-50f836949956/childre" +
+            WebTestRequest request321 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/51c9136b-2b32-4830-9044-50f836949956/childre" +
                     "n");
             request321.ThinkTime = 3;
             request321.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request321.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request321.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request321.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request321.QueryStringParameters.Add("format", "json", false, false);
             request321.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:01:15-0400", false, false);
@@ -4640,12 +4640,12 @@ namespace Asa24LoadTest
             yield return request321;
             request321 = null;
 
-            WebTestRequest request322 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request322 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/5fec803d-2625-4d16-9457-f6e899453ece/foods/d171066a-cb96-4511-87f3-e31157f54de1" +
                     "/details");
             request322.Method = "POST";
             request322.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request322.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request322.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request322.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request322.QueryStringParameters.Add("format", "json", false, false);
             request322.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:01:19-0400", false, false);
@@ -4658,20 +4658,20 @@ namespace Asa24LoadTest
             yield return request322;
             request322 = null;
 
-            WebTestRequest request323 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request323 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request323.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request323.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request323.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request323.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request323.QueryStringParameters.Add("format", "json", false, false);
             request323.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:01:19-0400", false, false);
             yield return request323;
             request323 = null;
 
-            WebTestRequest request324 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/ca9ac99f-3c7f-498f-9687-cb277c91b34e/childre" +
+            WebTestRequest request324 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/ca9ac99f-3c7f-498f-9687-cb277c91b34e/childre" +
                     "n");
             request324.ThinkTime = 3;
             request324.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request324.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request324.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request324.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request324.QueryStringParameters.Add("format", "json", false, false);
             request324.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:01:20-0400", false, false);
@@ -4683,12 +4683,12 @@ namespace Asa24LoadTest
             yield return request324;
             request324 = null;
 
-            WebTestRequest request325 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request325 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/5fec803d-2625-4d16-9457-f6e899453ece/foods/d171066a-cb96-4511-87f3-e31157f54de1" +
                     "/details");
             request325.Method = "POST";
             request325.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request325.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request325.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request325.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request325.QueryStringParameters.Add("format", "json", false, false);
             request325.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:01:23-0400", false, false);
@@ -4701,20 +4701,20 @@ namespace Asa24LoadTest
             yield return request325;
             request325 = null;
 
-            WebTestRequest request326 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request326 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request326.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request326.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request326.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request326.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request326.QueryStringParameters.Add("format", "json", false, false);
             request326.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:01:23-0400", false, false);
             yield return request326;
             request326 = null;
 
-            WebTestRequest request327 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/f5c35955-4caa-45e5-b894-da67797c9939/childre" +
+            WebTestRequest request327 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/f5c35955-4caa-45e5-b894-da67797c9939/childre" +
                     "n");
             request327.ThinkTime = 6;
             request327.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request327.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request327.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request327.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request327.QueryStringParameters.Add("format", "json", false, false);
             request327.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:01:24-0400", false, false);
@@ -4726,12 +4726,12 @@ namespace Asa24LoadTest
             yield return request327;
             request327 = null;
 
-            WebTestRequest request328 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request328 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/8c0d0799-090e-4ffe-bf87-3e1a63b5eb4d/foods/b6103833-450d-4a42-a642-2067184f83f5" +
                     "/details");
             request328.Method = "POST";
             request328.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request328.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request328.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request328.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request328.QueryStringParameters.Add("format", "json", false, false);
             request328.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:01:29-0400", false, false);
@@ -4744,20 +4744,20 @@ namespace Asa24LoadTest
             yield return request328;
             request328 = null;
 
-            WebTestRequest request329 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request329 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request329.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request329.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request329.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request329.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request329.QueryStringParameters.Add("format", "json", false, false);
             request329.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:01:31-0400", false, false);
             yield return request329;
             request329 = null;
 
-            WebTestRequest request330 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/cf5f6505-9995-4f2b-b984-ae9a0dbfe304/childre" +
+            WebTestRequest request330 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/cf5f6505-9995-4f2b-b984-ae9a0dbfe304/childre" +
                     "n");
             request330.ThinkTime = 2;
             request330.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request330.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request330.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request330.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request330.QueryStringParameters.Add("format", "json", false, false);
             request330.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:01:32-0400", false, false);
@@ -4769,12 +4769,12 @@ namespace Asa24LoadTest
             yield return request330;
             request330 = null;
 
-            WebTestRequest request331 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request331 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/8c0d0799-090e-4ffe-bf87-3e1a63b5eb4d/foods/b6103833-450d-4a42-a642-2067184f83f5" +
                     "/details");
             request331.Method = "POST";
             request331.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request331.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request331.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request331.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request331.QueryStringParameters.Add("format", "json", false, false);
             request331.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:01:34-0400", false, false);
@@ -4787,20 +4787,20 @@ namespace Asa24LoadTest
             yield return request331;
             request331 = null;
 
-            WebTestRequest request332 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request332 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request332.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request332.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request332.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request332.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request332.QueryStringParameters.Add("format", "json", false, false);
             request332.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:01:34-0400", false, false);
             yield return request332;
             request332 = null;
 
-            WebTestRequest request333 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/3a152d4e-0b5b-464c-a6bf-5d852ee35532/childre" +
+            WebTestRequest request333 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/3a152d4e-0b5b-464c-a6bf-5d852ee35532/childre" +
                     "n");
             request333.ThinkTime = 5;
             request333.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request333.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request333.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request333.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request333.QueryStringParameters.Add("format", "json", false, false);
             request333.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:01:34-0400", false, false);
@@ -4812,12 +4812,12 @@ namespace Asa24LoadTest
             yield return request333;
             request333 = null;
 
-            WebTestRequest request334 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request334 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/8c0d0799-090e-4ffe-bf87-3e1a63b5eb4d/foods/b6103833-450d-4a42-a642-2067184f83f5" +
                     "/details");
             request334.Method = "POST";
             request334.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request334.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request334.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request334.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request334.QueryStringParameters.Add("format", "json", false, false);
             request334.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:01:40-0400", false, false);
@@ -4830,20 +4830,20 @@ namespace Asa24LoadTest
             yield return request334;
             request334 = null;
 
-            WebTestRequest request335 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request335 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request335.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request335.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request335.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request335.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request335.QueryStringParameters.Add("format", "json", false, false);
             request335.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:01:40-0400", false, false);
             yield return request335;
             request335 = null;
 
-            WebTestRequest request336 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/nodes/ca4d3ea7-ec1a-4163-8dbb-c5b88bca364a/childre" +
+            WebTestRequest request336 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/nodes/ca4d3ea7-ec1a-4163-8dbb-c5b88bca364a/childre" +
                     "n");
             request336.ThinkTime = 3;
             request336.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request336.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request336.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request336.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request336.QueryStringParameters.Add("format", "json", false, false);
             request336.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:01:40-0400", false, false);
@@ -4855,12 +4855,12 @@ namespace Asa24LoadTest
             yield return request336;
             request336 = null;
 
-            WebTestRequest request337 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/meals" +
+            WebTestRequest request337 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/meals" +
                     "/8c0d0799-090e-4ffe-bf87-3e1a63b5eb4d/foods/b6103833-450d-4a42-a642-2067184f83f5" +
                     "/details");
             request337.Method = "POST";
             request337.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request337.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request337.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request337.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request337.QueryStringParameters.Add("format", "json", false, false);
             request337.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:01:43-0400", false, false);
@@ -4873,21 +4873,21 @@ namespace Asa24LoadTest
             yield return request337;
             request337 = null;
 
-            WebTestRequest request338 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request338 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request338.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request338.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request338.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request338.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request338.QueryStringParameters.Add("format", "json", false, false);
             request338.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:01:43-0400", false, false);
             yield return request338;
             request338 = null;
 
-            WebTestRequest request339 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/modul" +
+            WebTestRequest request339 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/modul" +
                     "es/foodEnteredPrompt/Completed");
             request339.ThinkTime = 5;
             request339.Method = "POST";
             request339.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request339.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request339.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request339.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request339.QueryStringParameters.Add("format", "json", false, false);
             request339.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:01:44-0400", false, false);
@@ -4899,9 +4899,9 @@ namespace Asa24LoadTest
             yield return request339;
             request339 = null;
 
-            WebTestRequest request340 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/users/" + UserId + "/favorites");
+            WebTestRequest request340 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/users/" + UserId + "/favorites");
             request340.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request340.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request340.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request340.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request340.QueryStringParameters.Add("fltType", "undefined", false, false);
             request340.QueryStringParameters.Add("format", "json", false, false);
@@ -4909,21 +4909,21 @@ namespace Asa24LoadTest
             yield return request340;
             request340 = null;
 
-            WebTestRequest request341 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request341 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request341.ThinkTime = 21;
             request341.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request341.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/details"));
+            request341.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/details"));
             request341.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request341.QueryStringParameters.Add("format", "json", false, false);
             request341.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:01:49-0400", false, false);
             yield return request341;
             request341 = null;
 
-            WebTestRequest request342 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/modul" +
+            WebTestRequest request342 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/modul" +
                     "es/fff/completed");
             request342.Method = "POST";
             request342.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request342.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/forgotten-foods"));
+            request342.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/forgotten-foods"));
             request342.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request342.QueryStringParameters.Add("format", "json", false, false);
             request342.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:02:10-0400", false, false);
@@ -4937,9 +4937,9 @@ namespace Asa24LoadTest
             yield return request342;
             request342 = null;
 
-            WebTestRequest request343 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/users/" + UserId + "/favorites");
+            WebTestRequest request343 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/users/" + UserId + "/favorites");
             request343.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request343.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/forgotten-foods"));
+            request343.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/forgotten-foods"));
             request343.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request343.QueryStringParameters.Add("fltType", "undefined", false, false);
             request343.QueryStringParameters.Add("format", "json", false, false);
@@ -4947,19 +4947,19 @@ namespace Asa24LoadTest
             yield return request343;
             request343 = null;
 
-            WebTestRequest request344 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request344 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request344.ThinkTime = 11;
             request344.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request344.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/forgotten-foods"));
+            request344.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/forgotten-foods"));
             request344.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request344.QueryStringParameters.Add("format", "json", false, false);
             request344.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:02:10-0400", false, false);
             yield return request344;
             request344 = null;
 
-            WebTestRequest request345 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/users/" + UserId + "/favorites");
+            WebTestRequest request345 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/users/" + UserId + "/favorites");
             request345.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request345.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/my-food-and-drinks"));
+            request345.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/my-food-and-drinks"));
             request345.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request345.QueryStringParameters.Add("fltType", "undefined", false, false);
             request345.QueryStringParameters.Add("format", "json", false, false);
@@ -4967,31 +4967,31 @@ namespace Asa24LoadTest
             yield return request345;
             request345 = null;
 
-            WebTestRequest request346 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request346 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request346.ThinkTime = 6;
             request346.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request346.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/my-food-and-drinks"));
+            request346.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/my-food-and-drinks"));
             request346.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request346.QueryStringParameters.Add("format", "json", false, false);
             request346.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:02:22-0400", false, false);
             yield return request346;
             request346 = null;
 
-            WebTestRequest request347 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId);
+            WebTestRequest request347 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId);
             request347.ThinkTime = 4;
             request347.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request347.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/review"));
+            request347.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/review"));
             request347.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request347.QueryStringParameters.Add("format", "json", false, false);
             request347.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:02:28-0400", false, false);
             yield return request347;
             request347 = null;
 
-            WebTestRequest request348 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/modul" +
+            WebTestRequest request348 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/modul" +
                     "es/usualamount/completed");
             request348.Method = "POST";
             request348.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request348.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/amount-reported"));
+            request348.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/amount-reported"));
             request348.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request348.QueryStringParameters.Add("format", "json", false, false);
             request348.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:02:32-0400", false, false);
@@ -5003,11 +5003,11 @@ namespace Asa24LoadTest
             yield return request348;
             request348 = null;
 
-            WebTestRequest request349 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/modul" +
+            WebTestRequest request349 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/modul" +
                     "es/submissionStatus/completed");
             request349.Method = "POST";
             request349.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request349.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/amount-reported"));
+            request349.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/amount-reported"));
             request349.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request349.QueryStringParameters.Add("format", "json", false, false);
             request349.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:02:32-0400", false, false);
@@ -5019,11 +5019,11 @@ namespace Asa24LoadTest
             yield return request349;
             request349 = null;
 
-            WebTestRequest request350 = new WebTestRequest("http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/recalls/" + RecallId + "/modul" +
+            WebTestRequest request350 = new WebTestRequest("https://asa24-stage.nci.nih.gov/2016/recalls/" + RecallId + "/modul" +
                     "es/submissionStatus/completed");
             request350.Method = "POST";
             request350.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
-            request350.Headers.Add(new WebTestRequestHeader("Referer", "http://ec2-3-89-189-88.compute-1.amazonaws.com/2016/amount-reported"));
+            request350.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/amount-reported"));
             request350.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
             request350.QueryStringParameters.Add("format", "json", false, false);
             request350.QueryStringParameters.Add("RequestDateTime", "2017-06-15T16:02:32-0400", false, false);
