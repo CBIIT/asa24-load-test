@@ -166,7 +166,7 @@ namespace Asa24LoadTest
             request11.Headers.Add(new WebTestRequestHeader("Accept", "application/json, text/plain, */*"));
             request11.Headers.Add(new WebTestRequestHeader("Referer", "https://asa24-stage.nci.nih.gov/2016/jwt"));
             request11.Headers.Add(new WebTestRequestHeader("Authorization", this.Context["token"].ToString()));
-            request11.QueryStringParameters.Add("studyid", "9c6bf45d-cbb7-4e6c-8d46-6ac987d53b0a", false, false);
+            request11.QueryStringParameters.Add("studyid", "986e6bc0-c134-49e9-a683-43397fbee8c7", false, false);
             request11.QueryStringParameters.Add("language", "undefined", false, false);
             request11.QueryStringParameters.Add("format", "json", false, false);
             request11.QueryStringParameters.Add("RequestDateTime", "2017-06-15T11:01:29-0400", false, false);
