@@ -57,6 +57,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\libraries\Microsoft.VisualStudio.QualityTools.WebTestFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Json, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Json.4.4.0-preview1-25305-02\lib\netstandard1.0\System.Json.dll</HintPath>
@@ -73,6 +76,7 @@
     <Compile Include="ChristineCoded.cs" />
     <Compile Include="DougCoded.cs" />
     <Compile Include="EmilyCoded.cs" />
+    <Compile Include="EnvHelper.cs" />
     <Compile Include="JwtHelper.cs" />
     <Compile Include="KiranCoded.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
