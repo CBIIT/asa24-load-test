@@ -9,7 +9,7 @@ namespace Asa24LoadTest
     public static class EnvHelper
     {
         private static readonly String WestatMobileDemo = "https://asa24mobiledemo.wesdemo.com/";
-        private static readonly String AWSDemo = "https://asa24-stage.nci.nih.gov/";
+        private static readonly String AWSDemo = "https://asa24-stage.nih.gov/";
 
         /// <summary>
         /// The project id for CANDM1 in a demo derived database.
